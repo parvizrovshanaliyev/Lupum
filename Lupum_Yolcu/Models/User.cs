@@ -16,10 +16,10 @@ namespace Lupum_Yolcu.Models
         [StringLength(50),Required]
         public string Fullname { get; set; }
 
-        [StringLength(50),EmailAddress, Required]
+        [StringLength(50), Required]
         public string Email { get; set; }
 
-        [StringLength(50), Required]
+        [StringLength(200), Required]
         public string Password { get; set; }
 
         [Required]

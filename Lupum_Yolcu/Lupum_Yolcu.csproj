@@ -135,6 +135,10 @@
     <Compile Include="Migrations\201904080606067_cdb.Designer.cs">
       <DependentUpon>201904080606067_cdb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904080643501_user_change_prop.cs" />
+    <Compile Include="Migrations\201904080643501_user_change_prop.Designer.cs">
+      <DependentUpon>201904080643501_user_change_prop.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Action.cs" />
     <Compile Include="Models\Group.cs" />
@@ -823,6 +827,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904080606067_cdb.resx">
       <DependentUpon>201904080606067_cdb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904080643501_user_change_prop.resx">
+      <DependentUpon>201904080643501_user_change_prop.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
