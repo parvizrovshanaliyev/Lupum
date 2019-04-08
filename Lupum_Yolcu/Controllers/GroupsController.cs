@@ -45,7 +45,6 @@ namespace Lupum_Yolcu.Controllers
 
             if (_context.Groups.FirstOrDefault(g => g.Name == Group.Name) != null)
             {
-                ViewData["ErrorMessage"] = "Your Error Message";
 
                 return Json(new
                 {

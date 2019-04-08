@@ -35,7 +35,7 @@
 
             url: $(this).attr("action"),
             type: $(this).attr("method"),
-            dataType: "jshon",
+            dataType: "json",
 
             data: {
                 Group: group
@@ -46,16 +46,22 @@
                 if (response.status === 200)
                 {
                     $("#AddGroup")[0].reset();
-                    $.alert({
-                        title: 'Alert!',
-                        content: 'Added Group!',
+                    Swal.fire({
+                        position: 'top-end',
+                        type: 'success',
+                        title: 'Your Group Added',
+                        showConfirmButton: false,
+                        timer: 1500
                     })
                 }
                 else
                 {
-                    $.alert({
-                        title: 'Alert!',
-                        content: response.message,
+                    Swal.fire({
+                        position: 'top-end',
+                        type: 'error',
+                        title: response.message,
+                        showConfirmButton: false,
+                        timer: 1500
                     })
 
                 }
