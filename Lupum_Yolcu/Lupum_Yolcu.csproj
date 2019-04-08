@@ -131,7 +131,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904080606067_cdb.cs" />
+    <Compile Include="Migrations\201904080606067_cdb.Designer.cs">
+      <DependentUpon>201904080606067_cdb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Action.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -760,7 +768,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Assets\file\upload\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\.DS_Store" />
@@ -812,6 +819,11 @@
     <Content Include="Assets\media\mediaelement.srt" />
     <Content Include="Assets\partials\.DS_Store" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201904080606067_cdb.resx">
+      <DependentUpon>201904080606067_cdb.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
