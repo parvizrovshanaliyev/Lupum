@@ -43,12 +43,20 @@
 
             success: function (response) {
                 console.log(response);
-                if (response.status == 200)
+                if (response.status === 200)
                 {
-
+                    $("#AddGroup")[0].reset();
+                    $.alert({
+                        title: 'Alert!',
+                        content: 'Added Group!',
+                    })
                 }
                 else
                 {
+                    $.alert({
+                        title: 'Alert!',
+                        content: response.message,
+                    })
 
                 }
             }
@@ -57,5 +65,23 @@
 
         });
 
+    });
+
+
+    $('a.delete').confirm({
+        title: "Delete",
+        content:"Are you sure to delete?",
+        buttons: {
+            "Yes": {
+                btnClass: 'btn-danger', // class for the button
+                action: function () {
+                    location.href = $(this).attr('href');
+                }
+            },
+            "No": {
+                btnClass: 'btn-primary', // class for the button
+                
+            }
+        }
     });
 });

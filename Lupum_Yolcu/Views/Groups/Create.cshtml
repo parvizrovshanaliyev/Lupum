@@ -28,7 +28,12 @@
                     <div class="card p-b-20">
                        
                         <div class="card-body">
+
                             <form id="AddGroup" action="@Url.Action("Create")" method="post">
+                                @Html.ValidationSummary()
+                                <div class="form-group ">
+                                    <label class="text-danger">@ViewData["ErrorMessage"]</label>
+                                </div>
                                 <div class="form-group label-floating is-empty">
                                     <label class="control-label">Name</label>
                                     <input type="text" required name="Name" class="form-control">
@@ -41,7 +46,7 @@
                                         <div class="col-md-2">
                                             <div class="checkbox">
                                                 <label>
-                                                    <input type="checkbox"  name="CanView" id="checkboxSuccess" value="true">
+                                                    <input type="checkbox" name="CanView" id="checkboxSuccess" value="true">
                                                     Can View
                                                 </label>
                                             </div>
@@ -82,7 +87,7 @@
                                     </div>
 
                                 }
-                               <button type="submit" class="btn btn-primary">Add</button>
+                                <button type="submit" class="btn btn-primary">Add</button>
                             </form>
                         </div>
                     </div>

@@ -55,8 +55,13 @@
                                                     <td>@group.Name</td>
                                                     <td>@string.Join(", ",group.Users.Select(u=>u.Fullname).ToArray())</td>
                                                     <td>
-                                                        <a href="javascript:void(0)" class="icon edit-customer"><i class="zmdi zmdi-edit"></i></a>
-                                                        <a href="javascript:void(0)" class="icon edit-customer"><i class="zmdi zmdi-delete"></i></a>
+                                                        <a href="@Url.Action("Edit",new{id=group.Id})" class="icon edit-customer"><i class="zmdi zmdi-edit"></i></a>
+
+                                                        @if (group.Users.Count() == 0)
+                                                        {
+                                                            <a href="@Url.Action("Delete",new { id=group.Id})" class="icon delete"><i class="zmdi zmdi-delete"></i></a>
+
+                                                        }
                                                     </td>
                                                 </tr>
                                             }

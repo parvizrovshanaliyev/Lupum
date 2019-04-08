@@ -42,6 +42,29 @@ namespace Lupum_Yolcu.Controllers
                     status = 402
                 }, JsonRequestBehavior.AllowGet);
             }
+
+            if (_context.Groups.FirstOrDefault(g => g.Name == Group.Name) != null)
+            {
+                ViewData["ErrorMessage"] = "Your Error Message";
+
+                return Json(new
+                {
+                    status = 404,
+                    message = "This Group Exists",
+
+                }, JsonRequestBehavior.AllowGet);
+            }
+
+            if (Group.Roles == null || Group.Roles.Count()==0)
+            {
+                return Json(
+                   
+                    new
+                {
+                    status = 405,
+                    message = "You must choose a permission!!!"
+                }, JsonRequestBehavior.AllowGet);
+            }
             _context.Groups.Add(Group);
             _context.SaveChanges();
             return Json(new
