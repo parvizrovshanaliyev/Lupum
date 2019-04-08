@@ -126,6 +126,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL\LupumContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -138,6 +139,14 @@
     <Compile Include="Migrations\201904080643501_user_change_prop.cs" />
     <Compile Include="Migrations\201904080643501_user_change_prop.Designer.cs">
       <DependentUpon>201904080643501_user_change_prop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904080650040_user_table_change2.cs" />
+    <Compile Include="Migrations\201904080650040_user_table_change2.Designer.cs">
+      <DependentUpon>201904080650040_user_table_change2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904080651287_user_table_change3.cs" />
+    <Compile Include="Migrations\201904080651287_user_table_change3.Designer.cs">
+      <DependentUpon>201904080651287_user_table_change3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Action.cs" />
@@ -823,6 +832,8 @@
     <Content Include="Assets\media\mediaelement.srt" />
     <Content Include="Assets\partials\.DS_Store" />
     <None Include="packages.config" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Shared\_Notifications.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904080606067_cdb.resx">
@@ -830,6 +841,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904080643501_user_change_prop.resx">
       <DependentUpon>201904080643501_user_change_prop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904080650040_user_table_change2.resx">
+      <DependentUpon>201904080650040_user_table_change2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904080651287_user_table_change3.resx">
+      <DependentUpon>201904080651287_user_table_change3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

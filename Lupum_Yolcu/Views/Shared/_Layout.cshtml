@@ -1,42 +1,225 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>MaterialWrap - jQuery full version</title>
+    <link rel="stylesheet" href="~/Assets/css/vendor.bundle.css">
+    <link rel="stylesheet" href="~/Assets/css/app.bundle.css">
+    <link rel="stylesheet" href="~/Assets/css/theme-a.css">
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+    <div id="app_wrapper">
+        <header id="app_topnavbar-wrapper">
+            <nav role="navigation" class="navbar topnavbar">
+                <div class="nav-wrapper">
+                    <ul class="nav navbar-nav pull-left left-menu">
+                        <li class="app_menu-open">
+                            <a href="javascript:void(0)" data-toggle-state="app_sidebar-left-open" data-key="leftSideBar">
+                                <i class="zmdi zmdi-menu"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav left-menu hidden-xs">
+                        <li>
+                            <a href="javascript:void(0)" class="nav-link">
+                                <span>Home</span>
+                            </a>
+                        </li>
+                        <li class="dropdown dropdown-lg app_menu_launcher hidden-xs">
+                            <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown" aria-expanded="false">
+                                <span>Dropdown</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-lg-menu dropdown-menu-left btn-primary p-15 text-center">
+                                <li>
+                                    <ul>
+                                        <li><a href="app-mail.html"><i class="zmdi zmdi-email"></i><span>Mail</span></a></li>
+                                        <li><a href="javascript:void(0)"><i class="zmdi zmdi-accounts-list"></i><span>Contacts</span></a></li>
+                                        <li><a href="javascript:void(0)"><i class="zmdi zmdi-comment-text"></i><span>Chat</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul>
+                                        <li><a href="app-notes.html"><i class="mdi mdi-lightbulb"></i><span>Notes</span></a></li>
+                                        <li><a href="app-taskboard.html"><i class="zmdi zmdi-view-column"></i><span>Taskboard</span></a></li>
+                                        <li><a href="javascript:void(0)"><i class="zmdi zmdi-calendar-note"></i><span>Calendar</span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown mega">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link" aria-expanded="false">
+                                <span>Mega</span>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="dropdown-menu full-width p-l-10">
+                                <div class="row">
+                                    <div class="col-xs-22 col-sm-2 col-md-4">
+                                        <h3>Pages <span class="badge status info">10</span></h3>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-md-6">
+                                                <ul>
+                                                    <li>
+                                                        <a href="page-profile.html" class="btn-primary-hover"><i class="zmdi zmdi-chevron-right m-r-5"></i> Profile</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="page-invoice.html" class="btn-primary-hover"><i class="zmdi zmdi-chevron-right m-r-5"></i>  Invoice</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="page-timeline.html" class="btn-primary-hover"><i class="zmdi zmdi-chevron-right m-r-5"></i>  Timeline</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="page-locations.html" class="btn-primary-hover"><i class="zmdi zmdi-chevron-right m-r-5"></i>  Locations</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-12 col-md-6">
+                                                <ul>
+                                                    <li>
+                                                        <a href="page-pricing-tables.html" class="btn-primary-hover"><i class="zmdi zmdi-chevron-right m-r-5"></i>  Pricing Tables</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="page-gallery.html" class="btn-primary-hover"><i class="zmdi zmdi-chevron-right m-r-5"></i>  Gallery</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="login.html" class="btn-primary-hover"><i class="zmdi zmdi-chevron-right m-r-5"></i>  Login</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="lock-screen.html" class="btn-primary-hover"><i class="zmdi zmdi-chevron-right m-r-5"></i>  Lock Screen</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-10 col-md-8">
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <h3 class="p-t-15 p-b-15">New Arrivals</h3>
+                                            <div class="col-xs-12">
+                                                <div id="new_arrivals_megamenu" class="row">
+                                                    <div><img src="~/Assets/img/ecom/products/39_Ie8T.jpeg" class="col-sm-6 col-md-4 max-h-200" alt=""></div>
+                                                    <div><img src="~/Assets/img/ecom/products/39_8wMD.jpeg" class="col-sm-6 col-md-4 max-h-200" alt=""></div>
+                                                    <div><img src="~/Assets/img/ecom/products/39_JnFC.jpeg" class="col-sm-6 col-md-4 max-h-200" alt=""></div>
+                                                    <div><img src="~/Assets/img/ecom/products/2830_S4ql.jpeg" class="col-sm-6 col-md-4 max-h-200" alt=""></div>
+                                                    <div><img src="~/Assets/img/ecom/products/4107_PPxC.jpeg" class="col-sm-6 col-md-4 max-h-200" alt=""></div>
+                                                    <div><img src="~/Assets/img/ecom/products/5764_YK7g.jpeg" class="col-sm-6 col-md-4 max-h-200" alt=""></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <h3 class="p-t-15 p-b-15">Today's Analysis</h3>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="ct-chart ct-golden-section " id="chartist_megaMenu"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="dropdown avatar-menu">
+                            <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                                <span class="meta">
+                                    <span class="avatar">
+                                        <img src="~/Assets/img/profiles/02.jpg" alt="" class="img-circle max-w-35">
+                                        <i class="badge mini success status"></i>
+                                    </span>
+                                    <span class="name">Mike Jones</span>
+                                    <span class="caret"></span>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu btn-primary dropdown-menu-right">
+                                <li>
+                                    <a href="page-profile.html"><i class="zmdi zmdi-account"></i> Profile</a>
+                                </li>
+                                <li>
+                                    <a href="app-mail.html"><i class="zmdi zmdi-email"></i> Messages</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index", "Account")"><i class="zmdi zmdi-settings"></i> Account Settings</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("LogOut", "Home")"><i class="zmdi zmdi-sign-in"></i> Sign Out</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="select-menu hidden-xs hidden-sm">
+                            <select class="select form-control country" style="display:none">
+                                <option option="EN">English</option>
+                                <option option="ES">Español</option>
+                                <option option="FN"> Français</option>
+                                <option option="IT">Italiano</option>
+                            </select>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)" data-navsearch-open>
+                                <i class="zmdi zmdi-search"></i>
+                            </a>
+                        </li>
+                        @{Html.RenderPartial("~/Views/Shared/_Notifications.cshtml");}
+                        <li class="last">
+                            <a href="javascript:void(0)" data-toggle-state="sidebar-overlay-open" data-key="rightSideBar">
+                                <i class="mdi mdi-playlist-plus"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <form role="search" action="" class="navbar-form" id="navbar_form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Search and press enter..." class="form-control" id="navbar_search" autocomplete="off">
+                        <i data-navsearch-close class="zmdi zmdi-close close-search"></i>
+                    </div>
+                    <button type="submit" class="hidden btn btn-default">Submit</button>
+                </form>
+            </nav>
+        </header>
+
+        <aside id="app_sidebar-left">
+            <div id="logo_wrapper">
+                <ul>
+                    <li class="logo-icon">
+                        <a href="index.html">
+                            <div class="logo">
+                                <img src="~/Assets/img/logo/logo-icon.png" alt="Logo">
+                            </div>
+                            <h1 class="brand-text">Lupum</h1>
+                        </a>
+                    </li>
+                    <li class="menu-icon">
+                        <a href="javascript:void(0)" role="button" data-toggle-state="app_sidebar-menu-collapsed" data-key="leftSideBar">
+                            <i class="mdi mdi-backburger"></i>
+                        </a>
+                    </li>
                 </ul>
             </div>
-        </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
+            <nav id="app_main-menu-wrapper" class="fadeInLeft scrollbar">
+                <div class="sidebar-inner sidebar-push">
+                    <ul class="nav nav-pills nav-stacked">
+                        <li class="sidebar-header">MENU</li>
+                        <li><a href="@Url.Action("Index","Dashboard")"><i class="zmdi zmdi-view-dashboard"></i>Dashboard</a></li>
+                        <li><a href="@Url.Action("Index", "Account")"><i class="zmdi zmdi-settings"></i>Account Settings</a></li>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+
+                        <li class="sidebar-header">PAGE VIEWS</li>
+                        <li><a href="@Url.Action("Index","Dashboard")"><i class="zmdi zmdi-money"></i>Invoice</a></li>
+                        <li><a href="@Url.Action("Index","Dashboard")"><i class="zmdi zmdi-time"></i>Timeline</a></li>
+                        <li><a href="@Url.Action("Index","Dashboard")"><i class="zmdi zmdi-pin"></i>Locations</a></li>
+                        <li><a href="@Url.Action("Index","Dashboard")"><i class="zmdi zmdi-view-column"></i>Pricing Tables</a></li>
+                        <li><a href="@Url.Action("Index","Dashboard")"><i class="zmdi zmdi-collection-image"></i>Gallery</a></li>
+
+
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+        @RenderBody()
+    </div>
+    <script src="~/Assets/js/vendor.bundle.js"></script>
+    <script src="~/Assets/js/app.bundle.js"></script>
 </body>
 </html>
