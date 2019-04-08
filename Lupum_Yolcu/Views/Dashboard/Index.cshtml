@@ -3,364 +3,306 @@
     ViewBag.Title = "Index";
 }
 
-<section id="content_outer_wrapper">
-    <div id="content_wrapper" class="card-overlay">
-        <div id="header_wrapper" class="header-lg overlay ecom-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12">
-                        <header id="header">
-                            <h1>Welcome back, Jason.</h1>
-                            <small>Here’s what’s happening with your store right now.</small>
-                        </header>
-                    </div>
+
+<div id="content_wrapper" class="card-overlay">
+    <div id="header_wrapper" class="header-lg overlay ecom-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <header id="header">
+                        <h1>Welcome back, Jason.</h1>
+                        <small>Here’s what’s happening with your store right now.</small>
+                    </header>
                 </div>
             </div>
-        </div>
-        <div id="content" class="container">
-            <div class="content-body">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-4">
-                        <div class="card sales-card">
-                            <header class="card-heading ">
-                                <h2 class="card-title">Today’s sales goal</h2>
-                                <ul class="card-actions icons right-top">
-                                    <li>
-                                        <a href="javascript:void(0)" data-toggle="refresh">
-                                            <i class="zmdi zmdi-refresh-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)" data-toggle="dropdown">
-                                            <i class="zmdi zmdi-more-vert"></i>
-                                        </a>
-                                        <ul class="dropdown-menu btn-primary dropdown-menu-right">
-                                            <li>
-                                                <a href="javascript:void(0)">Today</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)">Last 7 Days</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)">Last 30 Days</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </header>
-                            <div class="card-body totalSales">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div id="totalSales" class="progressBar"></div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <h2 class="timer money" data-from="0" data-to="6200" data-speed="1000" data-refresh-interval="50"></h2>
-                                        <span class="timer orders block" data-from="0" data-to="190" data-speed="1000" data-refresh-interval="50"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="card sales-card">
-                            <header class="card-heading ">
-                                <h2 class="card-title">Today’s New Signups</h2>
-                                <ul class="card-actions icons right-top">
-                                    <li>
-                                        <a href="javascript:void(0)" data-toggle="refresh">
-                                            <i class="zmdi zmdi-refresh-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)" data-toggle="dropdown">
-                                            <i class="zmdi zmdi-more-vert"></i>
-                                        </a>
-                                        <ul class="dropdown-menu btn-primary dropdown-menu-right">
-                                            <li>
-                                                <a href="javascript:void(0)">Today</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)">Last 7 Days</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)">Last 30 Days</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </header>
-                            <div class="card-body newSignups">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div id="newSignups" class="progressBar"></div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <h2 class="timer" data-from="0" data-to="420" data-speed="1000" data-refresh-interval="50"></h2>
-                                        <span class="timer users block" data-from="0" data-to="967" data-speed="1000" data-refresh-interval="50"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 col-sm-8">
-                        <div class="card p-b-10">
-                            <header class="card-heading ">
-                                <h2 class="card-title">Today's Conversion Statistics</h2>
-                                <ul class="card-actions icons right-top">
-                                    <li>
-                                        <a href="javascript:void(0)" data-toggle-expand="content-expanded" data-key="contentExpand">
-                                            <i class="zmdi zmdi-fullscreen"></i>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)" data-toggle="refresh">
-                                            <i class="zmdi zmdi-refresh-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)" data-toggle="dropdown">
-                                            <i class="zmdi zmdi-more-vert"></i>
-                                        </a>
-                                        <ul class="dropdown-menu btn-primary dropdown-menu-right">
-                                            <li>
-                                                <a href="javascript:void(0)">Today</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)">Last 7 Days</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)">Last 30 Days</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </header>
-                            <div class="card-body">
-                                <ul class="summary">
-                                    <li>
-                                        <span class="block m-b-5">Added to cart</span>
-                                        <h2 class="timer percent" data-from="0" data-to="38" data-speed="1000" data-refresh-interval="50"></h2>
-                                    </li>
-                                    <li>
-                                        <span class="block m-b-5">Reached checkout</span>
-                                        <h2 class="timer percent" data-from="0" data-to="32" data-speed="1000" data-refresh-interval="50"></h2>
-                                    </li>
-                                    <li>
-                                        <span class="block m-b-5">Purchased</span>
-                                        <h2 class="timer percent" data-from="0" data-to="17" data-speed="1000" data-refresh-interval="50"></h2>
-                                    </li>
-                                    <li>
-                                        <span class="block m-b-5">Cancelled</span>
-                                        <h2 class="timer percent" data-from="0" data-to="3" data-speed="1000" data-refresh-interval="50"></h2>
-                                    </li>
-                                </ul>
-                            </div>
-                            <canvas id="conversionStats" width="1200" height="400"></canvas>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                        <div class="card">
-                            <header class="card-heading ">
-                                <h2 class="card-title">Payments Received</h2>
-                                <ul class="card-actions icons right-top">
-                                    <li>
-                                        <a href="javascript:void(0)" data-toggle="refresh">
-                                            <i class="zmdi zmdi-refresh-alt"></i>
-                                        </a>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="javascript:void(0)" data-toggle="dropdown">
-                                            <i class="zmdi zmdi-more-vert"></i>
-                                        </a>
-                                        <ul class="dropdown-menu btn-primary dropdown-menu-right">
-                                            <li>
-                                                <a href="javascript:void(0)">Option One</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)">Option Two</a>
-                                            </li>
-                                            <li>
-                                                <a href="javascript:void(0)">Option Three</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </header>
-                            <div class="card-body">
-                                <canvas id="salesStats" width="1200" height="400"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <section id="chat_compose_wrapper">
-                <div class="tippy-top">
-                    <div class="recipient">Allison Grayce</div>
-                    <ul class="card-actions icons  right-top">
-                        <li>
-                            <a href="javascript:void(0)">
-                                <i class="zmdi zmdi-videocam"></i>
-                            </a>
-                        </li>
-                        <li class="dropdown">
-                            <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
-                                <i class="zmdi zmdi-more-vert"></i>
-                            </a>
-                            <ul class="dropdown-menu btn-primary dropdown-menu-right">
-                                <li>
-                                    <a href="javascript:void(0)">Option One</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Option Two</a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0)">Option Three</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)" data-chat="close">
-                                <i class="zmdi zmdi-close"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class='chat-wrapper scrollbar'>
-                    <div class='chat-message scrollbar'>
-                        <div class='chat-message chat-message-recipient'>
-                            <img class='chat-image chat-image-default' src='~/Assets/img/profiles/05.jpg' />
-                            <div class='chat-message-wrapper'>
-                                <div class='chat-message-content'>
-                                    <p>Hey Mike, we have funding for our new project!</p>
-                                </div>
-                                <div class='chat-details'>
-                                    <span class='today small'></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='chat-message chat-message-sender'>
-                            <img class='chat-image chat-image-default' src='~/Assets/img/profiles/02.jpg' />
-                            <div class='chat-message-wrapper '>
-                                <div class='chat-message-content'>
-                                    <p>Awesome! Photo booth banh mi pitchfork kickstarter whatever, prism godard ethical 90's cray selvage.</p>
-                                </div>
-                                <div class='chat-details'>
-                                    <span class='today small'></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='chat-message chat-message-recipient'>
-                            <img class='chat-image chat-image-default' src='~/Assets/img/profiles/05.jpg' />
-                            <div class='chat-message-wrapper'>
-                                <div class='chat-message-content'>
-                                    <p> Artisan glossier vaporware meditation paleo humblebrag forage small batch.</p>
-                                </div>
-                                <div class='chat-details'>
-                                    <span class='today small'></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='chat-message chat-message-sender'>
-                            <img class='chat-image chat-image-default' src='~/Assets/img/profiles/02.jpg' />
-                            <div class='chat-message-wrapper'>
-                                <div class='chat-message-content'>
-                                    <p>Bushwick letterpress vegan craft beer dreamcatcher kickstarter.</p>
-                                </div>
-                                <div class='chat-details'>
-                                    <span class='today small'></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <footer id="compose-footer">
-                    <form class="form-horizontal compose-form">
-                        <ul class="card-actions icons left-bottom">
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <i class="zmdi zmdi-attachment-alt"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)">
-                                    <i class="zmdi zmdi-mood"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="form-group m-10 p-l-75 is-empty">
-                            <div class="input-group">
-                                <label class="sr-only">Leave a comment...</label>
-                                <input type="text" class="form-control form-rounded input-lightGray" placeholder="Leave a comment..">
-                                <span class="input-group-btn">
-                                    <button type="button" class="btn btn-blue btn-fab  btn-fab-sm">
-                                        <i class="zmdi zmdi-mail-send"></i>
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-                    </form>
-                </footer>
-            </section>
         </div>
     </div>
-    <footer id="footer_wrapper">
-        <div class="footer-content">
+    <div id="content" class="container">
+        <div class="content-body">
             <div class="row">
-                <div class="col-xs-12 col-sm-6">
-                    <h6>Want to Work with Us?</h6>
-                    <p>
-                        Paleo flexitarian bushwick letterpress, ea migas yr adipisicing. Man bun tacos tumblr kombucha, yuccie banjo affogato dolore gentrify retro chartreuse. Anim austin tempor ethical, sapiente food truck fanny pack farm-to-table.
-                        Culpa keytar esse tilde hoodie, art party nostrud messenger bag authentic helvetica kinfolk cred eu affogato forage.
-                    </p>
-                </div>
-                <div class="col-xs-12 col-sm-2">
-                    <h6>Company</h6>
-                    <ul>
-                        <li><a href="javascript:void(0)">About Us </a></li>
-                        <li><a href="javascript:void(0)">Careers</a></li>
-                        <li><a href="javascript:void(0)">Privacy Policy</a></li>
-                        <li><a href="javascript:void(0)">Contact Us</a></li>
-                    </ul>
-                </div>
                 <div class="col-xs-12 col-sm-4">
-                    <h6>Email Newsletters</h6>
-                    <p>Sign up for new MaterialWrap content, updates, and offers.</p>
-                    <div class="form-group is-empty">
+                    <div class="card sales-card">
+                        <header class="card-heading ">
+                            <h2 class="card-title">Today’s sales goal</h2>
+                            <ul class="card-actions icons right-top">
+                                <li>
+                                    <a href="javascript:void(0)" data-toggle="refresh">
+                                        <i class="zmdi zmdi-refresh-alt"></i>
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="javascript:void(0)" data-toggle="dropdown">
+                                        <i class="zmdi zmdi-more-vert"></i>
+                                    </a>
+                                    <ul class="dropdown-menu btn-primary dropdown-menu-right">
+                                        <li>
+                                            <a href="javascript:void(0)">Today</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">Last 7 Days</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">Last 30 Days</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </header>
+                        <div class="card-body totalSales">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div id="totalSales" class="progressBar"></div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h2 class="timer money" data-from="0" data-to="6200" data-speed="1000" data-refresh-interval="50"></h2>
+                                    <span class="timer orders block" data-from="0" data-to="190" data-speed="1000" data-refresh-interval="50"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card sales-card">
+                        <header class="card-heading ">
+                            <h2 class="card-title">Today’s New Signups</h2>
+                            <ul class="card-actions icons right-top">
+                                <li>
+                                    <a href="javascript:void(0)" data-toggle="refresh">
+                                        <i class="zmdi zmdi-refresh-alt"></i>
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="javascript:void(0)" data-toggle="dropdown">
+                                        <i class="zmdi zmdi-more-vert"></i>
+                                    </a>
+                                    <ul class="dropdown-menu btn-primary dropdown-menu-right">
+                                        <li>
+                                            <a href="javascript:void(0)">Today</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">Last 7 Days</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">Last 30 Days</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </header>
+                        <div class="card-body newSignups">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div id="newSignups" class="progressBar"></div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <h2 class="timer" data-from="0" data-to="420" data-speed="1000" data-refresh-interval="50"></h2>
+                                    <span class="timer users block" data-from="0" data-to="967" data-speed="1000" data-refresh-interval="50"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                    <div class="card p-b-10">
+                        <header class="card-heading ">
+                            <h2 class="card-title">Today's Conversion Statistics</h2>
+                            <ul class="card-actions icons right-top">
+                                <li>
+                                    <a href="javascript:void(0)" data-toggle-expand="content-expanded" data-key="contentExpand">
+                                        <i class="zmdi zmdi-fullscreen"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)" data-toggle="refresh">
+                                        <i class="zmdi zmdi-refresh-alt"></i>
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="javascript:void(0)" data-toggle="dropdown">
+                                        <i class="zmdi zmdi-more-vert"></i>
+                                    </a>
+                                    <ul class="dropdown-menu btn-primary dropdown-menu-right">
+                                        <li>
+                                            <a href="javascript:void(0)">Today</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">Last 7 Days</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">Last 30 Days</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </header>
+                        <div class="card-body">
+                            <ul class="summary">
+                                <li>
+                                    <span class="block m-b-5">Added to cart</span>
+                                    <h2 class="timer percent" data-from="0" data-to="38" data-speed="1000" data-refresh-interval="50"></h2>
+                                </li>
+                                <li>
+                                    <span class="block m-b-5">Reached checkout</span>
+                                    <h2 class="timer percent" data-from="0" data-to="32" data-speed="1000" data-refresh-interval="50"></h2>
+                                </li>
+                                <li>
+                                    <span class="block m-b-5">Purchased</span>
+                                    <h2 class="timer percent" data-from="0" data-to="17" data-speed="1000" data-refresh-interval="50"></h2>
+                                </li>
+                                <li>
+                                    <span class="block m-b-5">Cancelled</span>
+                                    <h2 class="timer percent" data-from="0" data-to="3" data-speed="1000" data-refresh-interval="50"></h2>
+                                </li>
+                            </ul>
+                        </div>
+                        <canvas id="conversionStats" width="1200" height="400"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="card">
+                        <header class="card-heading ">
+                            <h2 class="card-title">Payments Received</h2>
+                            <ul class="card-actions icons right-top">
+                                <li>
+                                    <a href="javascript:void(0)" data-toggle="refresh">
+                                        <i class="zmdi zmdi-refresh-alt"></i>
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="javascript:void(0)" data-toggle="dropdown">
+                                        <i class="zmdi zmdi-more-vert"></i>
+                                    </a>
+                                    <ul class="dropdown-menu btn-primary dropdown-menu-right">
+                                        <li>
+                                            <a href="javascript:void(0)">Option One</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">Option Two</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)">Option Three</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </header>
+                        <div class="card-body">
+                            <canvas id="salesStats" width="1200" height="400"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="chat_compose_wrapper">
+            <div class="tippy-top">
+                <div class="recipient">Allison Grayce</div>
+                <ul class="card-actions icons  right-top">
+                    <li>
+                        <a href="javascript:void(0)">
+                            <i class="zmdi zmdi-videocam"></i>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" data-toggle="dropdown" aria-expanded="false">
+                            <i class="zmdi zmdi-more-vert"></i>
+                        </a>
+                        <ul class="dropdown-menu btn-primary dropdown-menu-right">
+                            <li>
+                                <a href="javascript:void(0)">Option One</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Option Two</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)">Option Three</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)" data-chat="close">
+                            <i class="zmdi zmdi-close"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class='chat-wrapper scrollbar'>
+                <div class='chat-message scrollbar'>
+                    <div class='chat-message chat-message-recipient'>
+                        <img class='chat-image chat-image-default' src='~/Assets/img/profiles/05.jpg' />
+                        <div class='chat-message-wrapper'>
+                            <div class='chat-message-content'>
+                                <p>Hey Mike, we have funding for our new project!</p>
+                            </div>
+                            <div class='chat-details'>
+                                <span class='today small'></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='chat-message chat-message-sender'>
+                        <img class='chat-image chat-image-default' src='~/Assets/img/profiles/02.jpg' />
+                        <div class='chat-message-wrapper '>
+                            <div class='chat-message-content'>
+                                <p>Awesome! Photo booth banh mi pitchfork kickstarter whatever, prism godard ethical 90's cray selvage.</p>
+                            </div>
+                            <div class='chat-details'>
+                                <span class='today small'></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='chat-message chat-message-recipient'>
+                        <img class='chat-image chat-image-default' src='~/Assets/img/profiles/05.jpg' />
+                        <div class='chat-message-wrapper'>
+                            <div class='chat-message-content'>
+                                <p> Artisan glossier vaporware meditation paleo humblebrag forage small batch.</p>
+                            </div>
+                            <div class='chat-details'>
+                                <span class='today small'></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='chat-message chat-message-sender'>
+                        <img class='chat-image chat-image-default' src='~/Assets/img/profiles/02.jpg' />
+                        <div class='chat-message-wrapper'>
+                            <div class='chat-message-content'>
+                                <p>Bushwick letterpress vegan craft beer dreamcatcher kickstarter.</p>
+                            </div>
+                            <div class='chat-details'>
+                                <span class='today small'></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer id="compose-footer">
+                <form class="form-horizontal compose-form">
+                    <ul class="card-actions icons left-bottom">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="zmdi zmdi-attachment-alt"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <i class="zmdi zmdi-mood"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="form-group m-10 p-l-75 is-empty">
                         <div class="input-group">
-                            <label class="control-label sr-only" for="footerEmail">Email Address</label>
-                            <input type="email" class="form-control" id="footerEmail" placeholder="Enter your email address...">
+                            <label class="sr-only">Leave a comment...</label>
+                            <input type="text" class="form-control form-rounded input-lightGray" placeholder="Leave a comment..">
                             <span class="input-group-btn">
-                                <button type="button" class="btn btn-white btn-fab animate-fab btn-fab-sm">
+                                <button type="button" class="btn btn-blue btn-fab  btn-fab-sm">
                                     <i class="zmdi zmdi-mail-send"></i>
                                 </button>
                             </span>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row copy-wrapper">
-                <div class="col-xs-8">
-                    <p class="copy">&copy; Copyright <time class="year"></time> MaterialWrap - All Rights Reserved</p>
-                </div>
-                <div class="col-xs-4">
-                    <ul class="social">
-                        <li>
-                            <a href="javascript:void(0)"> </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
-</section>
+                </form>
+            </footer>
+        </section>
+    </div>
+</div>
+
 
 

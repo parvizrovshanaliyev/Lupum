@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <title>MaterialWrap - jQuery full version</title>
+    <title>@ViewBag.Title</title>
     <link rel="stylesheet" href="~/Assets/css/vendor.bundle.css">
     <link rel="stylesheet" href="~/Assets/css/app.bundle.css">
     <link rel="stylesheet" href="~/Assets/css/theme-a.css">
@@ -206,7 +206,7 @@
 
 
                         <li class="sidebar-header">PAGE VIEWS</li>
-                        <li><a href="@Url.Action("Index","Dashboard")"><i class="zmdi zmdi-money"></i>Invoice</a></li>
+                        <li><a href="@Url.Action("Index","Groups")"><i class="zmdi zmdi-group"></i>Groups</a></li>
                         <li><a href="@Url.Action("Index","Dashboard")"><i class="zmdi zmdi-time"></i>Timeline</a></li>
                         <li><a href="@Url.Action("Index","Dashboard")"><i class="zmdi zmdi-pin"></i>Locations</a></li>
                         <li><a href="@Url.Action("Index","Dashboard")"><i class="zmdi zmdi-view-column"></i>Pricing Tables</a></li>
@@ -217,9 +217,71 @@
                 </div>
             </nav>
         </aside>
-        @RenderBody()
+        <section id="content_outer_wrapper">
+            @RenderBody()
+            <footer id="footer_wrapper">
+                <div class="footer-content">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6">
+                            <h6>Want to Work with Us?</h6>
+                            <p>
+                                Paleo flexitarian bushwick letterpress, ea migas yr adipisicing. Man bun tacos tumblr kombucha, yuccie banjo affogato dolore gentrify retro chartreuse. Anim austin tempor ethical, sapiente food truck fanny pack farm-to-table.
+                                Culpa keytar esse tilde hoodie, art party nostrud messenger bag authentic helvetica kinfolk cred eu affogato forage.
+                            </p>
+                        </div>
+                        <div class="col-xs-12 col-sm-2">
+                            <h6>Company</h6>
+                            <ul>
+                                <li><a href="javascript:void(0)">About Us </a></li>
+                                <li><a href="javascript:void(0)">Careers</a></li>
+                                <li><a href="javascript:void(0)">Privacy Policy</a></li>
+                                <li><a href="javascript:void(0)">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <h6>Email Newsletters</h6>
+                            <p>Sign up for new MaterialWrap content, updates, and offers.</p>
+                            <div class="form-group is-empty">
+                                <div class="input-group">
+                                    <label class="control-label sr-only" for="footerEmail">Email Address</label>
+                                    <input type="email" class="form-control" id="footerEmail" placeholder="Enter your email address...">
+                                    <span class="input-group-btn">
+                                        <button type="button" class="btn btn-white btn-fab animate-fab btn-fab-sm">
+                                            <i class="zmdi zmdi-mail-send"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row copy-wrapper">
+                        <div class="col-xs-8">
+                            <p class="copy">&copy; Copyright <time class="year"></time> MaterialWrap - All Rights Reserved</p>
+                        </div>
+                        <div class="col-xs-4">
+                            <ul class="social">
+                                <li>
+                                    <a href="javascript:void(0)"> </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"> </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"> </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0)"> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </section>
+
     </div>
     <script src="~/Assets/js/vendor.bundle.js"></script>
     <script src="~/Assets/js/app.bundle.js"></script>
+    <script src="~/Assets/js/myJS.js"></script>
 </body>
 </html>
