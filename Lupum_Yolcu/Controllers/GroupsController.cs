@@ -31,5 +31,23 @@ namespace Lupum_Yolcu.Controllers
             var Actions = _context.Actions.ToList();
             return View(Actions);
         }
+
+        [HttpPost]
+        public JsonResult Create(Models.Group Group)
+        {
+            if (Group == null)
+            {
+                return Json(new
+                {
+                    status = 402
+                }, JsonRequestBehavior.AllowGet);
+            }
+            _context.Groups.Add(Group);
+            _context.SaveChanges();
+            return Json(new
+            {
+                status=200
+            },JsonRequestBehavior.AllowGet);
+        }
     }
 }

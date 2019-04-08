@@ -36,7 +36,7 @@
                                 <label class="control-label">Actions</label>
                                 @foreach (var action in Model)
                                 {
-                                    <div class="form-group  is-empty" data-id="@action.Id">
+                                    <div class="form-group  is-empty action" data-id="@action.Id">
                                         <label class=" col-md-2 control-label">@action.Name</label>
                                         <div class="col-md-2">
                                             <div class="checkbox">
@@ -82,6 +82,7 @@
                                     </div>
 
                                 }
+                               <button type="submit" class="btn btn-primary">Add</button>
                             </form>
                         </div>
                     </div>
