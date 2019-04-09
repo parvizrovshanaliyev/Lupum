@@ -661,7 +661,7 @@
 	  (0, _initPlugins.otherScrollbarOptions)();
 	  (0, _transitions.fullscreenTransition)();
 	  (0, _demo.css3AnimationDemos)();
-	  (0, _demo.iconModal)();
+
 	  (0, _auth.loginV3)();
 	  (0, _auth.registerForm)();
 	  (0, _alerts.sweetAlerts)();
@@ -4069,24 +4069,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	//These javascript modules are for demo purposes.
-	var iconModal = function iconModal() {
-	  var icons = $('.icon');
-	  var name = 'bus';
-	  icons.on('click', function (e) {
-	    e.preventDefault();
-	    var oldName = name;
-	    name = $(this).data('name');
-	    var code = $(this).data('code');
-	    var category = $(this).parent().parent().find('.page-header').html();
-	    $('#icon-sizes i').removeClass('zmdi-' + oldName).addClass('zmdi-' + name);
-	    $('#iconModal .source').html('&lt;i class="zmdi zmdi-' + name + '"&gt;&lt;/i&gt;');
-	    $('#icon-code .zmdi').html('&#x' + code);
-	    $('#icon-code .unicode').html('Unicode: ' + code);
-	    $('#icon-code .category').html('Category: ' + category);
-	    $('#iconModalLabel').html('zmdi-' + name);
-	  });
-	};
+
 	var css3AnimationDemos = function css3AnimationDemos() {
 	  $('.animation-demo .btn').on('click', function () {
 	    var className = $(this).text();
@@ -4183,15 +4166,6 @@
 	    }
 	  });
 	};
-	var swapStyleSheet = function swapStyleSheet(uri) {
-	  var linkId = 'autoloaded-stylesheet',
-	      oldLink = $('#' + linkId).attr('id', linkId + '-old');
-	  $('head').append($('<link/>').attr({ 'id': linkId, 'rel': 'stylesheet', 'href': uri }));
-	  if (oldLink.length) {
-	    oldLink.remove();
-	  }
-	  return $('#' + linkId);
-	};
 	var swapLayoutMode = function swapLayoutMode() {
 	  $('input[name=layoutMode]').click(function () {
 	    if ($('body').hasClass('boxed-layout')) {
@@ -4201,7 +4175,6 @@
 	    $('body').addClass(getVal);
 	  });
 	};
-	exports.iconModal = iconModal;
 	exports.css3AnimationDemos = css3AnimationDemos;
 	exports.cardCarousel = cardCarousel;
 	exports.cardDemoMorrisChart = cardDemoMorrisChart;

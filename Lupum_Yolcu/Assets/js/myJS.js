@@ -1,7 +1,4 @@
 ﻿$(document).ready(function () {
-
-
-
     $("#AddGroup").submit(function (ev) {
         ev.preventDefault();
 
@@ -72,22 +69,35 @@
         });
 
     });
-
-
     $('a.delete').confirm({
-        title: "Delete",
-        content:"Are you sure to delete?",
         buttons: {
-            "Yes": {
-                btnClass: 'btn-danger', // class for the button
-                action: function () {
-                    location.href = $(this).attr('href');
-                }
+            yes: function () {
+               
+                location.href = this.$target.attr('href');
+               
+                
+
             },
-            "No": {
-                btnClass: 'btn-primary', // class for the button
+            no: function () {
+               
                 
             }
         }
     });
+    //$('a.delete').confirm({
+    //    title: "Delete",
+    //    content:"Are you sure to delete?",
+    //    buttons: {
+    //        Yes: {
+    //            btnClass: 'btn-danger', // class for the button
+    //            hey: function () {
+    //                location.href = this.$target.attr("href");
+    //            }
+    //        },
+    //        No: {
+    //            btnClass: 'btn-primary', // class for the button
+                
+    //        }
+    //    }
+    //});
 });
