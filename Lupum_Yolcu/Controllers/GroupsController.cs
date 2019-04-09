@@ -113,5 +113,42 @@ namespace Lupum_Yolcu.Controllers
 
             return View(grp);
         }
+
+
+        [HttpPost]
+        public JsonResult Edit(Models.Group Group,Models.Role[] Roles)
+        {
+
+            if (_context.Groups.FirstOrDefault(g => g.Name == Group.Name && g.Id!=Group.Id) != null)
+            {
+
+                return Json(new
+                {
+                    status = 404,
+                    message = "This Group Exists",
+
+                }, JsonRequestBehavior.AllowGet);
+            }
+
+            if (Roles == null ||Roles.Length == 0)
+            {
+                return Json(
+
+                    new
+                    {
+                        status = 405,
+                        message = "You must choose a permission!!!"
+                    }, JsonRequestBehavior.AllowGet);
+            }
+            _context.Entry(Group).State = System.Data.Entity.EntityState.Modified;
+           
+
+            _context.Roles.RemoveRange(_context.Roles.Where(r => r.GroupId == Group.Id));
+            _context.Roles.AddRange(Roles);
+            _context.SaveChanges();
+            
+            return Json(
+                new{status =200},JsonRequestBehavior.AllowGet);
+        }
     }
 }

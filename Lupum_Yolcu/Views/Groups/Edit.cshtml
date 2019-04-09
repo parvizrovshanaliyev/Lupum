@@ -32,8 +32,8 @@
 
                         <div class="card-body">
 
-                            <form id="AddGroup" action="@Url.Action("Create")" method="post">
-
+                            <form id="EditGroup" action="@Url.Action("edit",new { id=Model.Id})" method="post">
+                                <input type="hidden" name="Id" value="@Model.Id" />
                                 <div class="form-group label-floating is-empty">
                                     <label >Name</label>
                                     <input type="text" required name="Name" class="form-control"  value="@Model.Name">
@@ -88,7 +88,7 @@
                                     </div>
 
                                 }
-                                <button type="submit" class="btn btn-primary">Add</button>
+                                <button type="submit" class="btn btn-primary">Update</button>
                             </form>
                         </div>
                     </div>
