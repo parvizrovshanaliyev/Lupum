@@ -129,6 +129,7 @@ namespace Lupum_Yolcu.Controllers
 
                 }, JsonRequestBehavior.AllowGet);
             }
+            _context.Entry(Group).State = System.Data.Entity.EntityState.Modified;
 
             if (Roles == null ||Roles.Length == 0)
             {
@@ -140,7 +141,6 @@ namespace Lupum_Yolcu.Controllers
                         message = "You must choose a permission!!!"
                     }, JsonRequestBehavior.AllowGet);
             }
-            _context.Entry(Group).State = System.Data.Entity.EntityState.Modified;
 
 
             _context.Roles.RemoveRange(_context.Roles.Where(r => r.GroupId == Group.Id));
