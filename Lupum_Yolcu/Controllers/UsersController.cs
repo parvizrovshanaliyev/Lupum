@@ -121,5 +121,38 @@ namespace Lupum_Yolcu.Controllers
         }
         #endregion
 
+        ///Edit User
+        #region Edit User
+        public ActionResult Edit(int id)
+        {
+            User user = _context.Users.Find(id);
+
+            if (user == null) return HttpNotFound("yoxdu lan");
+            ViewBag.Groups = _context.Groups.ToList();
+            return View(user);
+        }
+
+        [HttpPost,ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, string Status, int GroupId)
+        {
+
+            User user = _context.Users.Find(id);
+
+            if (user == null) return HttpNotFound("yoxdu lan");
+
+            if (string.IsNullOrEmpty(Status))
+            {
+                user.Status = false;
+            }
+            else
+            {
+                user.Status = true;
+            }
+            user.GroupId = GroupId;
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        #endregion
+
     }
 }
