@@ -20,5 +20,12 @@ namespace Lupum_Yolcu.Controllers
         {
             return View(_context.Users.Include("Group").ToList());
         }
+
+
+        public ActionResult Create()
+        {
+            var groups = _context.Groups.ToList();
+            return View(groups);
+        }
     }
 }

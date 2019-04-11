@@ -13,13 +13,13 @@ namespace Lupum_Yolcu.Models
 
         public bool Status { get; set; }
 
-        [StringLength(50),Required]
+        [StringLength(50)]
         public string Fullname { get; set; }
 
         [StringLength(50), Required]
         public string Email { get; set; }
 
-        [StringLength(200), Required]
+        [StringLength(200)]
         public string Password { get; set; }
 
         [Required]
