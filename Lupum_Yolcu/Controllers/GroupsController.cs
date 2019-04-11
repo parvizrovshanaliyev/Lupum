@@ -141,7 +141,7 @@ namespace Lupum_Yolcu.Controllers
                     }, JsonRequestBehavior.AllowGet);
             }
             _context.Entry(Group).State = System.Data.Entity.EntityState.Modified;
-           
+
 
             _context.Roles.RemoveRange(_context.Roles.Where(r => r.GroupId == Group.Id));
             _context.Roles.AddRange(Roles);
