@@ -154,6 +154,10 @@
     <Compile Include="Migrations\201904110602489_usertable_someRequiredDelete.Designer.cs">
       <DependentUpon>201904110602489_usertable_someRequiredDelete.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904110625206_useradd_prop_Token.cs" />
+    <Compile Include="Migrations\201904110625206_useradd_prop_Token.Designer.cs">
+      <DependentUpon>201904110625206_useradd_prop_Token.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Action.cs" />
     <Compile Include="Models\Group.cs" />
@@ -846,6 +850,7 @@
     <Content Include="Views\Groups\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
     <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Confirm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904080606067_cdb.resx">
@@ -862,6 +867,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904110602489_usertable_someRequiredDelete.resx">
       <DependentUpon>201904110602489_usertable_someRequiredDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904110625206_useradd_prop_Token.resx">
+      <DependentUpon>201904110625206_useradd_prop_Token.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

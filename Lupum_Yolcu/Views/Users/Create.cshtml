@@ -1,4 +1,4 @@
-﻿@model  IEnumerable<Lupum_Yolcu.Models.Group>
+﻿@model  IEnumerable <Lupum_Yolcu.Models.Group>
 @{
     ViewBag.Title = "Create User";
 }
@@ -30,7 +30,7 @@
                         <div class="card-body">
 
                             <form action="@Url.Action("Create")" method="post">
-
+                                @Html.AntiForgeryToken()
                                 <div class="form-group label-floating is-empty">
                                     <label class="control-label">Email</label>
                                     <input type="text" id="Email" required name="Email" class="form-control">

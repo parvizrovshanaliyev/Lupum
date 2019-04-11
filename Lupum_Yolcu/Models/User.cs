@@ -22,6 +22,9 @@ namespace Lupum_Yolcu.Models
         [StringLength(200)]
         public string Password { get; set; }
 
+        [StringLength(200)]
+        public string Token { get; set; }
+
         [Required]
         public int GroupId { get; set; }
 
