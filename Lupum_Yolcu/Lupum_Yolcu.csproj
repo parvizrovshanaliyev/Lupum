@@ -158,10 +158,22 @@
     <Compile Include="Migrations\201904110625206_useradd_prop_Token.Designer.cs">
       <DependentUpon>201904110625206_useradd_prop_Token.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904111811576_Sale_Tables.cs" />
+    <Compile Include="Migrations\201904111811576_Sale_Tables.Designer.cs">
+      <DependentUpon>201904111811576_Sale_Tables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Action.cs" />
     <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\Market.cs" />
+    <Compile Include="Models\Network.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderItem.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductNetworkPrice.cs" />
     <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Type.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -871,6 +883,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904110625206_useradd_prop_Token.resx">
       <DependentUpon>201904110625206_useradd_prop_Token.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904111811576_Sale_Tables.resx">
+      <DependentUpon>201904111811576_Sale_Tables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -20,6 +20,12 @@ namespace Lupum_Yolcu.Models
         [StringLength(50), Required]
         public string Name { get; set; }
 
+        [StringLength(50), Required]
+        public string Controller { get; set; }
+
+        [StringLength(50), Required]
+        public string Icon { get; set; }
+
 
         public virtual ICollection<Role> Roles { get; set; } 
     }

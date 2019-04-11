@@ -8,6 +8,10 @@ namespace Lupum_Yolcu.Models
 {
     public class User
     {
+        public User()
+        {
+            Markets = new HashSet<Market>();
+        }
         public int Id { get; set; }
 
 
@@ -28,7 +32,7 @@ namespace Lupum_Yolcu.Models
         [Required]
         public int GroupId { get; set; }
 
-
+        public virtual ICollection<Market> Markets { get; set; }
         public virtual Group Group { get; set; }
 
     }
