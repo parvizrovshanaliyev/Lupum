@@ -32,7 +32,9 @@
                 Log in to your account Lupum.az
             </h1>
             <div class="login-body">
-                <form action="@Url.Action("login","home")" method="post">
+                <form action="@Url.Action("confirm","users")" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="token" value="@Model" />
                     <div class="form-group label-floating is-empty">
                         <label class="control-label">Fullname</label>
                         <input type="text" name="Fullname" required class="form-control">

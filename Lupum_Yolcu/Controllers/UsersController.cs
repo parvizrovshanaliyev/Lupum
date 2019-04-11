@@ -57,9 +57,25 @@ namespace Lupum_Yolcu.Controllers
             if (user == null) return HttpNotFound("Bele Bir User qokku");
 
 
-            return View();
+            return View(model:user.Token);
         }
 
+        [HttpPost,ValidateAntiForgeryToken]
+        public ActionResult Confirm(User user)
+        {
+            User userDb = _context.Users.FirstOrDefault(u => u.Token == user.Token);
+            if (user == null) return HttpNotFound("Bele Bir User qokku");
+            if (userDb == null) return HttpNotFound("Yoxdu lan");
+            userDb.Password = Crypto.HashPassword(user.Password);
+            userDb.Fullname = user.Fullname;
+            userDb.Token = null;
+            userDb.Status = true;
+            _context.SaveChanges();
+
+            Session["Login"] = true;
+            Session["User"] = userDb;
+            return RedirectToAction("Index", "Dashboard");
+        }
         #endregion
         #region Send Confirm Email User
 
