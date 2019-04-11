@@ -51,7 +51,16 @@
                                         @foreach (var user in Model)
                                         {
                                         <tr>
-                                            <td>@user.Fullname</td>
+                                            <td>
+                                                @if (!string.IsNullOrEmpty(user.Fullname))
+                                                {
+                                                    @user.Fullname
+                                                }
+                                                else
+                                                {
+                                                    @user.Email
+                                                }
+                                            </td>
                                             <td>@user.Group.Name</td>
                                             <td>
                                                 @if (user.Status)
@@ -60,7 +69,11 @@
                                                 }
                                                 else
                                                 {
-                                                    <span class="label label-warning">Passive</span>
+                                                    <span class="label label-info">Passive</span>
+                                                }
+                                                @if (user.Token != null)
+                                                {
+                                                    <span class="label label-danger">Invited, Not Approved</span>
                                                 }
                                             </td>
                                             <td></td>

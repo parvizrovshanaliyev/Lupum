@@ -24,7 +24,7 @@ namespace Lupum_Yolcu.Controllers
             return View(_context.Users.Include("Group").ToList());
         }
 
-
+        ///create user
         #region Create User
         public ActionResult Create()
         {
@@ -46,10 +46,10 @@ namespace Lupum_Yolcu.Controllers
             _context.Users.Add(user);
             _context.SaveChanges();
             SendConfirm(user.Email,user.Token);
-            return Content("");
+            return RedirectToAction("Index");
         }
         #endregion
-
+        ///user confirm email register
         #region Confirm User
         public ActionResult Confirm(string token)
         {
@@ -77,6 +77,7 @@ namespace Lupum_Yolcu.Controllers
             return RedirectToAction("Index", "Dashboard");
         }
         #endregion
+        ///send confirm email 
         #region Send Confirm Email User
 
         private void SendConfirm(string email, string token)
@@ -106,7 +107,19 @@ namespace Lupum_Yolcu.Controllers
 
         }
         #endregion
+        ///delete user
+        #region Delete User
+        public ActionResult Delete(int id)
+        {
+            User user = _context.Users.Find(id);
 
+            if (user == null) return HttpNotFound("yoxdu lan");
+
+            _context.Users.Remove(user);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        #endregion
 
     }
 }
