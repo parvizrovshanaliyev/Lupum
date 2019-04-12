@@ -130,6 +130,7 @@
     <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NetworksController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DAL\LupumContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -162,6 +163,10 @@
     <Compile Include="Migrations\201904111811576_Sale_Tables.cs" />
     <Compile Include="Migrations\201904111811576_Sale_Tables.Designer.cs">
       <DependentUpon>201904111811576_Sale_Tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904120652537_somechange.cs" />
+    <Compile Include="Migrations\201904120652537_somechange.Designer.cs">
+      <DependentUpon>201904120652537_somechange.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Action.cs" />
@@ -789,6 +794,10 @@
     <Content Include="Assets\partials\task\_task-add.html" />
     <Content Include="Assets\partials\task\_task-edit.html" />
     <Content Include="Assets\partials\_preloader.html" />
+    <Content Include="Assets\plugins\tagging\css\jquery.tagit.css" />
+    <Content Include="Assets\plugins\tagging\css\tagit.ui-zendesk.css" />
+    <Content Include="Assets\plugins\tagging\js\tag-it.js" />
+    <Content Include="Assets\plugins\tagging\js\tag-it.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -870,6 +879,8 @@
     <Content Include="Views\Networks\Index.cshtml" />
     <Content Include="Views\Networks\Create.cshtml" />
     <Content Include="Views\Networks\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904080606067_cdb.resx">
@@ -892,6 +903,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904111811576_Sale_Tables.resx">
       <DependentUpon>201904111811576_Sale_Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904120652537_somechange.resx">
+      <DependentUpon>201904120652537_somechange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -35,23 +35,15 @@
                                     <label > User Status</label>
                                     <div class="togglebutton m-b-15">
                                         <label style="margin-top: 2%;">
-                                            @if (Model.Token != null)
-                                            {
-
-                                                
+                                            @if (Model.Token != null) { 
                                                 <span style="border-radius: 20px;padding: 8px 12px;text-transform: uppercase;font-size: 1.5625em" class="label label-danger">Invited, Not Approved</span>
                                             }
                                             else
                                             {
                                                 <input name="Status" value="true" type="checkbox" class="toggle-success" @(Model.Status ? "checked" : "") />
-
                                             }
                                         </label>
-                                        
-                                        
-
                                     </div>
-                                   @* <input type="text" id="Status" required name="Status" class="form-control">*@
                                 </div>
                                 <div class="form-group label-floating is-empty">
                                     <label for="GroupId">Groups</label>

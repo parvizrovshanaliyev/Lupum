@@ -25,7 +25,7 @@ namespace Lupum_Yolcu.Models
 
         public int  GiftCount { get; set; } ///yoxdursa 0 yaz
 
-        public string  Color { get; set; }
+        public string  Colors { get; set; }
 
         [Required]
         public int TypeId { get; set; }

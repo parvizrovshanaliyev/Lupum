@@ -1,0 +1,100 @@
+﻿@model  Lupum_Yolcu.Models.Product
+@{
+    ViewBag.Title = "New Product";
+}
+
+<div id="content_wrapper" class="card-overlay">
+    <div id="header_wrapper" class="header-md">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <header id="header">
+                        <h1>Create New Product</h1>
+                        <ol class="breadcrumb">
+                            <li><a href="@Url.Action("Index","Dashboard")">Dashboard</a></li>
+                            <li><a href="@Url.Action("Index","Products")">Products</a></li>
+                            <li class="active">New Product</li>
+                        </ol>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="container-fluid">
+        <div class="content-body">
+            <div class="row">
+
+                <div class="col-xs-12 col-md-12">
+                    <div class="card p-b-20">
+                        <div class="card-body">
+                            <form action="@Url.Action("Create")" method="post">
+                                @Html.AntiForgeryToken()
+                                <div class="form-group label-floating is-empty">
+                                    <label> Product Status</label>
+                                    <div class="togglebutton m-b-15">
+                                        <label style="margin-top: 2%;">
+                                            <input checked name="Status" value="true" type="checkbox" class="toggle-success" />
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group label-floating is-empty">
+                                    <label class="control-label">Name</label>
+                                    @Html.TextBoxFor(Model => Model.Name, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(Model => Model.Name, null, new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group label-floating is-empty">
+                                    <label for="TypeId">Sale Type</label>
+                                    <select class="form-control" name="TypeId" id="TypeId">
+                                        @foreach (var type in ViewBag.Types)
+                                        {
+                                            <option value="@type.Id">@type.Name</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group label-floating is-empty">
+                                    <label class="control-label">Price</label>
+                                    @Html.TextBoxFor(Model => Model.Price, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(Model => Model.Price, null, new { @class = "text-danger" })
+                                </div>
+                                <div class="form-group label-floating is-empty">
+                                    <label class="control-label">GiftCount</label>
+                                    @Html.TextBoxFor(Model => Model.GiftCount, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(Model => Model.GiftCount, null, new { @class = "text-danger" })
+                                </div>
+
+                                <div class="form-group label-floating is-empty">
+                                    <label>Colors</label>
+                                    @Html.TextBoxFor(Model => Model.Colors, new { @class = "form-control", name = "Colors" })
+                                    @Html.ValidationMessageFor(Model => Model.Colors, null, new { @class = "text-danger" })
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+@section styles{
+    <link href="~/Assets/plugins/tagging/css/jquery.tagit.css" rel="stylesheet" />
+    <link href="~/Assets/plugins/tagging/css/tagit.ui-zendesk.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="~/Assets/js/jquery.validate.min.js"></script>
+    <script src="~/Assets/js/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="~/Assets/plugins/tagging/js/tag-it.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            $('input[name="Colors"]').tagit();
+        });
+    </script>
+}
+
+
+
