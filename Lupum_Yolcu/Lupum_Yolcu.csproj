@@ -129,6 +129,7 @@
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NetworksController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="DAL\LupumContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -765,6 +766,8 @@
     <Content Include="Assets\img\timeline\timeline-3.jpg" />
     <Content Include="Assets\img\timeline\timeline-4.jpg" />
     <Content Include="Assets\js\app.bundle.js" />
+    <Content Include="Assets\js\jquery.validate.min.js" />
+    <Content Include="Assets\js\jquery.validate.unobtrusive.min.js" />
     <Content Include="Assets\js\myJS.js" />
     <Content Include="Assets\js\vendor.bundle.js" />
     <Content Include="Assets\js\vendor.js" />
@@ -864,6 +867,8 @@
     <Content Include="Views\Users\Create.cshtml" />
     <Content Include="Views\Users\Confirm.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Networks\Index.cshtml" />
+    <Content Include="Views\Networks\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904080606067_cdb.resx">
