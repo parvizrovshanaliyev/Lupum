@@ -70,5 +70,21 @@ namespace Lupum_Yolcu.Controllers
             return View(network);
         }
         #endregion
+
+        #region delete network
+        public ActionResult Delete(int id)
+        {
+            Network network = _context.Networks.Include("Markets").FirstOrDefault(n => n.Id == id);
+
+
+            if (network == null) return HttpNotFound("network qokku");
+
+            if (network.Markets.Count() != 0) return HttpNotFound("Bu sebekeye aid marketler oldugu ucun bu sebeke siline bilmez, marketi silde gel lan");
+
+            _context.Networks.Remove(network);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        #endregion
     }
 }
