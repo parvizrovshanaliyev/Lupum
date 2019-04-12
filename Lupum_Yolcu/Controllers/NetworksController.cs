@@ -42,5 +42,33 @@ namespace Lupum_Yolcu.Controllers
             return View(network);
         }
         #endregion
+
+        #region Edit network
+        public ActionResult Edit(int id)
+        {
+            Network network = _context.Networks.Find(id);
+
+            if (network == null) return HttpNotFound("network qokku");    
+
+            return View(network);
+        }
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public ActionResult Edit(Network network)
+        {
+            if(_context.Networks.FirstOrDefault(n=>n.Name==network.Name && n.Id != network.Id) != null)
+            {
+                ModelState.AddModelError("Name", "Bu adla Network Bazada Movcuddur, ferqli ad daxil edin");
+            }
+            if (ModelState.IsValid)
+            {
+                _context.Entry(network).State = System.Data.Entity.EntityState.Modified;
+                _context.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            return View(network);
+        }
+        #endregion
     }
 }
