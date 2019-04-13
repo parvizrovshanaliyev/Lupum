@@ -27,8 +27,8 @@
                 <div class="col-xs-12 col-md-12">
                     <div class="card p-b-20">
                         <div class="card-body">
-                            <form action="@Url.Action("Create")" method="post">
-                                @Html.AntiForgeryToken()
+                            <form  id="AddProduct" action="@Url.Action("Create")" method="post">
+                              
                                 <div class="form-group label-floating is-empty">
                                     <label> Product Status</label>
                                     <div class="togglebutton m-b-15">
@@ -38,13 +38,13 @@
                                     </div>
                                 </div>
                                 <div class="form-group label-floating is-empty">
-                                    <label class="control-label">Name</label>
+                                    <label>Name</label>
                                     @Html.TextBoxFor(Model => Model.Name, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(Model => Model.Name, null, new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group label-floating is-empty">
                                     <label for="TypeId">Sale Type</label>
-                                    <select class="form-control" name="TypeId" id="TypeId">
+                                    <select  class="form-control" name="TypeId" id="TypeId">
                                         @foreach (var type in ViewBag.Types)
                                         {
                                             <option value="@type.Id">@type.Name</option>
@@ -52,12 +52,12 @@
                                     </select>
                                 </div>
                                 <div class="form-group label-floating is-empty">
-                                    <label class="control-label">Price</label>
+                                    <label >Price</label>
                                     @Html.TextBoxFor(Model => Model.Price, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(Model => Model.Price, null, new { @class = "text-danger" })
                                 </div>
                                 <div class="form-group label-floating is-empty">
-                                    <label class="control-label">GiftCount</label>
+                                    <label >GiftCount</label>
                                     @Html.TextBoxFor(Model => Model.GiftCount, new { @class = "form-control" })
                                     @Html.ValidationMessageFor(Model => Model.GiftCount, null, new { @class = "text-danger" })
                                 </div>
@@ -67,7 +67,7 @@
                                     @Html.TextBoxFor(Model => Model.Colors, new { @class = "form-control", name = "Colors" })
                                     @Html.ValidationMessageFor(Model => Model.Colors, null, new { @class = "text-danger" })
                                 </div>
-                                <button type="submit" class="btn btn-primary">Add</button>
+                                <button  type="submit" class="btn btn-primary">Add</button>
                             </form>
                         </div>
                     </div>

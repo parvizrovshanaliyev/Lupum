@@ -33,7 +33,7 @@ namespace Lupum_Yolcu.Controllers
             return View(Actions);
         }
 
-        [HttpPost]
+        [HttpPost,ValidateAntiForgeryToken]
         public JsonResult Create(Models.Group Group)
         {
             if (Group == null)

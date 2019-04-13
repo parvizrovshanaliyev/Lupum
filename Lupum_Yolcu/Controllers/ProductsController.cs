@@ -29,28 +29,58 @@ namespace Lupum_Yolcu.Controllers
             return View();
         }
 
-        [HttpPost,ValidateAntiForgeryToken]
-        public ActionResult Create(Product product,string Status)
+        [HttpPost]
+        public JsonResult Create(Product Product)
         {
-            product.Status = true;
-            if (string.IsNullOrEmpty(Status))
+            if (Product == null)
             {
-                product.Status = false;
+                return Json(new
+                {
+                    status = 402,
+                    message = "Product null ",
+                }, JsonRequestBehavior.AllowGet);
             }
-            if (_context.Products.FirstOrDefault(p => p.Name == product.Name) != null)
-            {
-                ModelState.AddModelError("Name", "Bu adla bazada mehsul var");
-            }
-            if (ModelState.IsValid)
-            {
-                _context.Products.Add(product);
-                _context.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            ViewBag.Types = _context.Types.ToList();
 
-            return View(product);
+            if (_context.Products.FirstOrDefault(p => p.Name == Product.Name) != null)
+            {
+               
+                return Json(new
+                {
+                   
+                    status = 404,
+                    message = "Bu adla bazada mehsul var",
+
+                }, JsonRequestBehavior.AllowGet);
+            }
+            _context.Products.Add(Product);
+            _context.SaveChanges();
+            return Json(new {
+                status = 200
+            }, JsonRequestBehavior.AllowGet);
         }
-        #endregion
-    }
+
+            //[HttpPost,ValidateAntiForgeryToken]
+            //public ActionResult Create(Product product,string Status)
+            //{
+            //    product.Status = true;
+            //    if (string.IsNullOrEmpty(Status))
+            //    {
+            //        product.Status = false;
+            //    }
+            //    if (_context.Products.FirstOrDefault(p => p.Name == product.Name) != null)
+            //    {
+            //        ModelState.AddModelError("Name", "Bu adla bazada mehsul var");
+            //    }
+            //    if (ModelState.IsValid)
+            //    {
+            //        _context.Products.Add(product);
+            //        _context.SaveChanges();
+            //        //return RedirectToAction("Index");
+            //    }
+            //    ViewBag.Types = _context.Types.ToList();
+
+            //    return View(product);
+            //}
+            #endregion
+        }
 }

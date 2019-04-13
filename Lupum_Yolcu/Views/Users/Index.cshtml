@@ -26,7 +26,7 @@
                 <div class="col-xs-12">
                     <div class="card">
                         <header class="card-heading ">
-                            <h2 class="card-title">Groups Table</h2>
+                            <h2 class="card-title">Users Table</h2>
                             <a href="@Url.Action("Create")" class="btn btn-default">
                                 Create User
                             </a>
@@ -51,14 +51,15 @@
                                         @foreach (var user in Model)
                                         {
                                         <tr>
-                                            <td>
+                                            <td class="text-center">
                                                 @if (!string.IsNullOrEmpty(user.Fullname))
                                                 {
                                                     @user.Fullname
                                                 }
                                                 else
                                                 {
-                                                    @user.Email
+                                                <span class="label label-danger">@user.Email</span>
+                                                  
                                                 }
                                             </td>
                                             <td>@user.Group.Name</td>

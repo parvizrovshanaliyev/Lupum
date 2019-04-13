@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    ///////////////////Group//////////////////////////////
     $("#AddGroup").submit(function (ev) {
         ev.preventDefault();
 
@@ -145,10 +146,70 @@
         });
 
     });
+    ///////////////////Group//////////////////////////////
+    
+    ///////////////////Product//////////////////////////////
+    $("#AddProduct").submit(function (ev) {
+        ev.preventDefault();
+
+        var product = {
+            Name: $("input[name='Name']").val(),
+            Price: $("input[name='Price']").val(),
+            GiftCount: $("input[name='GiftCount']").val(),
+            Colors: $("input[name='Colors']").val(),
+            Status: $("input[name = 'Status']").is(":checked"),
+            TypeId: $("#TypeId option:selected").val()
+        };
+        //console.log(product);
+
+       
+
+
+        $.ajax({
+
+            url: $(this).attr("action"),
+            type: $(this).attr("method"),
+            dataType: "json",
+
+            data: {
+                Product: product
+            },
+
+            success: function (response) {
+                console.log(response);
+                if (response.status === 200) {
+                    //console.log(response);
+                    $("#AddProduct")[0].reset();
+                    Swal.fire({
+                        position: 'top-end',
+                        type: 'success',
+                        title: 'Your Product Added',
+                        showConfirmButton: false,
+                        timer: 2000
+                    })
+                }
+                else {
+                    Swal.fire({
+                        position: 'top-end',
+                        type: 'error',
+                        title: response.message,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+
+                }
+            }
+
+
+
+        });
+
+    });
+    ///////////////////Product//////////////////////////////
 
     $('a.delete').confirm({
         title: "Delete",
-        content:"Are you sure to delete?",
+        content: "Are you sure to delete?",
         buttons: {
             Yes: {
                 btnClass: 'btn-danger', // class for the button
@@ -157,8 +218,8 @@
                 }
             },
             no: {
-               
-                 btnClass: 'btn-success',
+
+                btnClass: 'btn-success',
             }
         }
     });
