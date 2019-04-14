@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "User Confirm";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <title>Lupum LogIn</title>
+    <link rel="stylesheet" href="~/Assets/css/vendor.bundle.css">
+    <link rel="stylesheet" href="~/Assets/css/app.bundle.css">
+    <link rel="stylesheet" href="~/Assets/css/theme-a.css">
+    <style>
+        span.strength-meter{
+            position:absolute;
+            top:-1px;
+            right:6px;
+        }
+    </style>
+</head>
+<body id="auth_wrapper">
+    <div id="login_wrapper">
+        <div class="logo">
+            <img src="~/Assets/img/logo/logo-icon@2x.png" alt="logo" class="logo-img">
+        </div>
+        <div id="login_content">
+            <h1 class="login-title">
+                Log in to your account Lupum.az
+            </h1>
+            <div class="login-body">
+                <form action="@Url.Action("confirm","users")" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="token" value="@Model" />
+                    <div class="form-group label-floating is-empty">
+                        <label class="control-label">Fullname</label>
+                        <input type="text" name="Fullname" required class="form-control">
+                    </div>
+                    <div class="form-group label-floating is-empty">
+                        <label class="control-label">Password</label>
+                        <input type="password" name="Password"  class="form-control"data-validation="strength" data-validation-strength="2">
+                    </div>
+                    <div class="form-group label-floating is-empty">
+                        <label class="control-label">Confirm Password</label>
+                        <input type="password" required class="form-control" data-validation="confirmation" data-validation-confirm="Password">
+                    </div>
+                    <button type="submit" class="btn btn-info btn-block m-t-40">Sign In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="~/Assets/js/vendor.bundle.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script>
+    <script src="~/Assets/js/app.bundle.js"></script>
+    <script >
+        $(document).ready(function () {
+            $.validate({
+                modules: 'security',
+                onModulesLoaded: function () {
+                    var optionalConfig = {
+                        fontSize: '12pt',
+                        padding: '4px',
+                        bad: 'Very bad',
+                        weak: 'Weak',
+                        good: 'Good',
+                        strong: 'Strong'
+                    };
+
+                    $('input[name="Password"]').displayPasswordStrength(optionalConfig);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
+

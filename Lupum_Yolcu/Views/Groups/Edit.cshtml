@@ -1,0 +1,104 @@
+﻿@model  Lupum_Yolcu.Models.Group
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+
+<div id="content_wrapper" class="card-overlay">
+    <div id="header_wrapper" class="header-md">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <header id="header">
+                        <h1>Create New Group</h1>
+                        <ol class="breadcrumb">
+                            <li><a href="@Url.Action("Index","Dashboard")">Dashboard</a></li>
+                            <li><a href="@Url.Action("Index","Groups")">Groups</a></li>
+                            <li class="active">Edit</li>
+                        </ol>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="container-fluid">
+        <div class="content-body">
+            <div class="row">
+
+                <div class="col-xs-12 col-md-12">
+                    <div class="card p-b-20">
+
+                        <div class="card-body">
+
+                            <form id="EditGroup" action="@Url.Action("edit",new { id=Model.Id})" method="post">
+                                <input type="hidden" name="Id" value="@Model.Id" />
+                                <div class="form-group label-floating is-empty">
+                                    <label >Name</label>
+                                    <input type="text" required name="Name" class="form-control"  value="@Model.Name">
+                                </div>
+                                <label class="control-label">Actions</label>
+                                @foreach (var action in ViewBag.Actions)
+                                {
+                                    var role = Model.Roles.FirstOrDefault(r => r.ActionId == action.Id);
+                                    <div class="form-group  is-empty action" data-id="@action.Id">
+                                        <label class=" col-md-2 control-label">@action.Name</label>
+                                        <div class="col-md-2">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" @(role?.CanView==true?"checked":"") name="CanView" id="checkboxSuccess" value="true">
+                                                    Can View
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" @(role?.CanAdd==true?"checked":"") name="CanAdd" id="checkboxSuccess" value="true">
+                                                    Can Add
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" @(role?.CanEdit==true?"checked":"") name="CanEdit" id="checkboxSuccess" value="true">
+                                                    Can Edit
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" @(role?.CanDelete==true?"checked":"") name="CanDelete" id="checkboxSuccess" value="true">
+                                                    Can Delete
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" @(role?.Ownerdata==true?"checked":"") name="Ownerdata" id="checkboxSuccess" value="true">
+                                                    Owner Data
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                }
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+

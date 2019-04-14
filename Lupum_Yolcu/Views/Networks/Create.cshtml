@@ -1,0 +1,51 @@
+﻿@model  Lupum_Yolcu.Models.Network
+@{
+    ViewBag.Title = "New Network";
+}
+
+<div id="content_wrapper" class="card-overlay">
+    <div id="header_wrapper" class="header-md">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <header id="header">
+                        <h1>Create New Network</h1>
+                        <ol class="breadcrumb">
+                            <li><a href="@Url.Action("Index","Dashboard")">Dashboard</a></li>
+                            <li><a href="@Url.Action("Index","Networks")">Networks</a></li>
+                            <li class="active">New Network</li>
+                        </ol>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="container-fluid">
+        <div class="content-body">
+            <div class="row">
+
+                <div class="col-xs-12 col-md-12">
+                    <div class="card p-b-20">
+                        <div class="card-body">
+                            <form action="@Url.Action("Create")" method="post">
+                                @Html.AntiForgeryToken()
+                                <div class="form-group label-floating is-empty">
+                                    <label class="control-label">Name</label>
+                                    @Html.TextBoxFor(Model => Model.Name, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(Model => Model.Name, null, new { @class = "text-danger" })
+                                </div><button type="submit" class="btn btn-primary">Add</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+@section scripts{
+    <script src="~/Assets/js/jquery.validate.min.js"></script>
+    <script src="~/Assets/js/jquery.validate.unobtrusive.min.js"></script>
+}
+

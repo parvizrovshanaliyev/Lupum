@@ -1,0 +1,951 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F5482CBD-C03A-4486-A7A0-D20A5A07EF0A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lupum_Yolcu</RootNamespace>
+    <AssemblyName>Lupum_Yolcu</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation, Version=1.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.5\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.3.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.5.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\GroupsController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NetworksController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
+    <Compile Include="DAL\LupumContext.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904080606067_cdb.cs" />
+    <Compile Include="Migrations\201904080606067_cdb.Designer.cs">
+      <DependentUpon>201904080606067_cdb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904080643501_user_change_prop.cs" />
+    <Compile Include="Migrations\201904080643501_user_change_prop.Designer.cs">
+      <DependentUpon>201904080643501_user_change_prop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904080650040_user_table_change2.cs" />
+    <Compile Include="Migrations\201904080650040_user_table_change2.Designer.cs">
+      <DependentUpon>201904080650040_user_table_change2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904080651287_user_table_change3.cs" />
+    <Compile Include="Migrations\201904080651287_user_table_change3.Designer.cs">
+      <DependentUpon>201904080651287_user_table_change3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904110602489_usertable_someRequiredDelete.cs" />
+    <Compile Include="Migrations\201904110602489_usertable_someRequiredDelete.Designer.cs">
+      <DependentUpon>201904110602489_usertable_someRequiredDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904110625206_useradd_prop_Token.cs" />
+    <Compile Include="Migrations\201904110625206_useradd_prop_Token.Designer.cs">
+      <DependentUpon>201904110625206_useradd_prop_Token.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904111811576_Sale_Tables.cs" />
+    <Compile Include="Migrations\201904111811576_Sale_Tables.Designer.cs">
+      <DependentUpon>201904111811576_Sale_Tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201904120652537_somechange.cs" />
+    <Compile Include="Migrations\201904120652537_somechange.Designer.cs">
+      <DependentUpon>201904120652537_somechange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Action.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\Market.cs" />
+    <Compile Include="Models\Network.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderItem.cs" />
+    <Compile Include="Models\Payment.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductNetworkPrice.cs" />
+    <Compile Include="Models\Role.cs" />
+    <Compile Include="Models\Type.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\css\app.bundle.css" />
+    <Content Include="Assets\css\app.css" />
+    <Content Include="Assets\css\js\app.bundle.js" />
+    <Content Include="Assets\css\js\vendor.bundle.js" />
+    <Content Include="Assets\css\js\vendor.js" />
+    <Content Include="Assets\css\theme-a.css" />
+    <Content Include="Assets\css\theme-b.css" />
+    <Content Include="Assets\css\theme-c.css" />
+    <Content Include="Assets\css\theme-d.css" />
+    <Content Include="Assets\css\theme-e.css" />
+    <Content Include="Assets\css\theme-f.css" />
+    <Content Include="Assets\css\theme-g.css" />
+    <Content Include="Assets\css\theme-h.css" />
+    <Content Include="Assets\css\vendor.bundle.css" />
+    <Content Include="Assets\css\vendor.css" />
+    <Content Include="Assets\fonts\default-skin.svg" />
+    <Content Include="Assets\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Assets\fonts\Material-Design-Icons.svg" />
+    <Content Include="Assets\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="Assets\fonts\mejs-controls.svg" />
+    <Content Include="Assets\fonts\slick.svg" />
+    <Content Include="Assets\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="Assets\img\backgrounds\bg-1.jpg" />
+    <Content Include="Assets\img\backgrounds\bg-2.jpg" />
+    <Content Include="Assets\img\backgrounds\bg-3.jpg" />
+    <Content Include="Assets\img\backgrounds\bg-4.jpg" />
+    <Content Include="Assets\img\backgrounds\unnamed-11.png" />
+    <Content Include="Assets\img\backgrounds\unnamed-18.png" />
+    <Content Include="Assets\img\backgrounds\unnamed-23.png" />
+    <Content Include="Assets\img\calendar\april.jpg" />
+    <Content Include="Assets\img\calendar\august.jpg" />
+    <Content Include="Assets\img\calendar\december.jpg" />
+    <Content Include="Assets\img\calendar\february.jpg" />
+    <Content Include="Assets\img\calendar\january.jpg" />
+    <Content Include="Assets\img\calendar\july.jpg" />
+    <Content Include="Assets\img\calendar\june.jpg" />
+    <Content Include="Assets\img\calendar\march.jpg" />
+    <Content Include="Assets\img\calendar\may.jpg" />
+    <Content Include="Assets\img\calendar\november.jpg" />
+    <Content Include="Assets\img\calendar\october.jpg" />
+    <Content Include="Assets\img\calendar\september.jpg" />
+    <Content Include="Assets\img\clear.png" />
+    <Content Include="Assets\img\ecom\ecom-header.jpg" />
+    <Content Include="Assets\img\ecom\products\10497_iGAk.jpeg" />
+    <Content Include="Assets\img\ecom\products\10497_QZPw.jpeg" />
+    <Content Include="Assets\img\ecom\products\10497_R0wd.jpeg" />
+    <Content Include="Assets\img\ecom\products\10499_elhB.jpeg" />
+    <Content Include="Assets\img\ecom\products\10499_Oqpe.jpeg" />
+    <Content Include="Assets\img\ecom\products\10499_V431.jpeg" />
+    <Content Include="Assets\img\ecom\products\12252_Tgi0.jpeg" />
+    <Content Include="Assets\img\ecom\products\12252_ZdMt.jpeg" />
+    <Content Include="Assets\img\ecom\products\12254_3huK.jpeg" />
+    <Content Include="Assets\img\ecom\products\12254_jASi.jpeg" />
+    <Content Include="Assets\img\ecom\products\12254_SdG0.jpeg" />
+    <Content Include="Assets\img\ecom\products\12284_CsFA.jpeg" />
+    <Content Include="Assets\img\ecom\products\12284_obgy.jpeg" />
+    <Content Include="Assets\img\ecom\products\12284_Qmka.jpeg" />
+    <Content Include="Assets\img\ecom\products\12300_eywe.jpeg" />
+    <Content Include="Assets\img\ecom\products\12300_nEOr.jpeg" />
+    <Content Include="Assets\img\ecom\products\12300_yeui.jpeg" />
+    <Content Include="Assets\img\ecom\products\12333_MP1W.jpeg" />
+    <Content Include="Assets\img\ecom\products\12333_PqFG.jpeg" />
+    <Content Include="Assets\img\ecom\products\12361_1Tww.jpeg" />
+    <Content Include="Assets\img\ecom\products\12361_E74p.jpeg" />
+    <Content Include="Assets\img\ecom\products\12361_nimh.jpeg" />
+    <Content Include="Assets\img\ecom\products\12364_n6Ei.jpeg" />
+    <Content Include="Assets\img\ecom\products\12364_qfN0.jpeg" />
+    <Content Include="Assets\img\ecom\products\12364_XoTi.jpeg" />
+    <Content Include="Assets\img\ecom\products\1285_8Kix.jpeg" />
+    <Content Include="Assets\img\ecom\products\1285_Ib9s.jpeg" />
+    <Content Include="Assets\img\ecom\products\1285_QtPJ.jpeg" />
+    <Content Include="Assets\img\ecom\products\1310_6Qyw.jpeg" />
+    <Content Include="Assets\img\ecom\products\1310_IKdD.jpeg" />
+    <Content Include="Assets\img\ecom\products\1310_rxxV.jpeg" />
+    <Content Include="Assets\img\ecom\products\144_ecTn.jpeg" />
+    <Content Include="Assets\img\ecom\products\144_NPeH.jpeg" />
+    <Content Include="Assets\img\ecom\products\144_zOlH.jpeg" />
+    <Content Include="Assets\img\ecom\products\1850_N6ck.jpeg" />
+    <Content Include="Assets\img\ecom\products\1850_O8Rv.jpeg" />
+    <Content Include="Assets\img\ecom\products\2830_drnw.jpeg" />
+    <Content Include="Assets\img\ecom\products\2830_inl3.jpeg" />
+    <Content Include="Assets\img\ecom\products\2830_S4ql.jpeg" />
+    <Content Include="Assets\img\ecom\products\3842_D6l5.jpeg" />
+    <Content Include="Assets\img\ecom\products\3842_Lnmb.jpeg" />
+    <Content Include="Assets\img\ecom\products\3842_uAVv.jpeg" />
+    <Content Include="Assets\img\ecom\products\39_8wMD.jpeg" />
+    <Content Include="Assets\img\ecom\products\39_Ie8T.jpeg" />
+    <Content Include="Assets\img\ecom\products\39_JnFC.jpeg" />
+    <Content Include="Assets\img\ecom\products\4107_N8j0.jpeg" />
+    <Content Include="Assets\img\ecom\products\4107_PPxC.jpeg" />
+    <Content Include="Assets\img\ecom\products\4107_yiWt.jpeg" />
+    <Content Include="Assets\img\ecom\products\4108_CGrv.jpeg" />
+    <Content Include="Assets\img\ecom\products\4108_f6Xw.jpeg" />
+    <Content Include="Assets\img\ecom\products\4108_QeFT.jpeg" />
+    <Content Include="Assets\img\ecom\products\420_dEPl.jpeg" />
+    <Content Include="Assets\img\ecom\products\420_N36e.jpeg" />
+    <Content Include="Assets\img\ecom\products\549_9Yrg.jpeg" />
+    <Content Include="Assets\img\ecom\products\549_LRqC.jpeg" />
+    <Content Include="Assets\img\ecom\products\549_NSST.jpeg" />
+    <Content Include="Assets\img\ecom\products\5654_6XJf.jpeg" />
+    <Content Include="Assets\img\ecom\products\5654_c1Dp.jpeg" />
+    <Content Include="Assets\img\ecom\products\5654_t6xQ.jpeg" />
+    <Content Include="Assets\img\ecom\products\5764_s0Nq.jpeg" />
+    <Content Include="Assets\img\ecom\products\5764_t0V1.jpeg" />
+    <Content Include="Assets\img\ecom\products\5764_YK7g.jpeg" />
+    <Content Include="Assets\img\ecom\products\5922_6Td6.jpeg" />
+    <Content Include="Assets\img\ecom\products\6160_01u5.jpeg" />
+    <Content Include="Assets\img\ecom\products\6160_9usp.jpeg" />
+    <Content Include="Assets\img\ecom\products\6160_RdXd.jpeg" />
+    <Content Include="Assets\img\ecom\products\6165_GJcy.jpeg" />
+    <Content Include="Assets\img\ecom\products\6165_l63L.jpeg" />
+    <Content Include="Assets\img\ecom\products\6165_zNw9.jpeg" />
+    <Content Include="Assets\img\ecom\products\6828_I7fw.jpeg" />
+    <Content Include="Assets\img\ecom\products\6828_OGKl.jpeg" />
+    <Content Include="Assets\img\ecom\products\6828_QfEz.jpeg" />
+    <Content Include="Assets\img\ecom\products\6828_xwCD.jpeg" />
+    <Content Include="Assets\img\ecom\products\6920_4vBv.jpeg" />
+    <Content Include="Assets\img\ecom\products\6920_9naK.jpeg" />
+    <Content Include="Assets\img\ecom\products\6920_FeuF.jpeg" />
+    <Content Include="Assets\img\ecom\products\7450_2Y7F.jpeg" />
+    <Content Include="Assets\img\ecom\products\7450_adzL %281%29.jpeg" />
+    <Content Include="Assets\img\ecom\products\7450_adzL.jpeg" />
+    <Content Include="Assets\img\ecom\products\7450_e8Rz %281%29.jpeg" />
+    <Content Include="Assets\img\ecom\products\7450_e8Rz.jpeg" />
+    <Content Include="Assets\img\ecom\products\7700_rDqZ.jpeg" />
+    <Content Include="Assets\img\ecom\products\7700_tKGH.jpeg" />
+    <Content Include="Assets\img\ecom\products\8292_MHg7.jpeg" />
+    <Content Include="Assets\img\ecom\products\8293_gLXg.jpeg" />
+    <Content Include="Assets\img\ecom\products\8747_quUK.jpeg" />
+    <Content Include="Assets\img\ecom\products\8747_U7ol.jpeg" />
+    <Content Include="Assets\img\ecom\products\8747_XhFs.jpeg" />
+    <Content Include="Assets\img\ecom\products\9232_6pco.jpeg" />
+    <Content Include="Assets\img\ecom\products\9232_kd48.jpeg" />
+    <Content Include="Assets\img\ecom\products\9232_sTq2.jpeg" />
+    <Content Include="Assets\img\ecom\products\9484_5SEQ.jpeg" />
+    <Content Include="Assets\img\ecom\products\9484_f3Xg.jpeg" />
+    <Content Include="Assets\img\ecom\products\9484_weNe %281%29.jpeg" />
+    <Content Include="Assets\img\ecom\products\9484_weNe.jpeg" />
+    <Content Include="Assets\img\ecom\products\9728_3iWd.jpeg" />
+    <Content Include="Assets\img\ecom\products\9728_HfMn.jpg" />
+    <Content Include="Assets\img\ecom\products\9728_VUPB.jpeg" />
+    <Content Include="Assets\img\ecom\products\9997_410I.jpeg" />
+    <Content Include="Assets\img\ecom\products\9997_t7T7.jpeg" />
+    <Content Include="Assets\img\ecom\products\9997_Tv74.jpeg" />
+    <Content Include="Assets\img\favicon-16x16.png" />
+    <Content Include="Assets\img\fileupload\fileupload-bg.jpg" />
+    <Content Include="Assets\img\gallery\full\full-1.jpg" />
+    <Content Include="Assets\img\gallery\full\full-10.jpg" />
+    <Content Include="Assets\img\gallery\full\full-11.jpg" />
+    <Content Include="Assets\img\gallery\full\full-12.jpg" />
+    <Content Include="Assets\img\gallery\full\full-13.jpg" />
+    <Content Include="Assets\img\gallery\full\full-14.jpg" />
+    <Content Include="Assets\img\gallery\full\full-15.jpg" />
+    <Content Include="Assets\img\gallery\full\full-16.jpg" />
+    <Content Include="Assets\img\gallery\full\full-17.jpg" />
+    <Content Include="Assets\img\gallery\full\full-18.jpg" />
+    <Content Include="Assets\img\gallery\full\full-19.jpg" />
+    <Content Include="Assets\img\gallery\full\full-2.jpg" />
+    <Content Include="Assets\img\gallery\full\full-20.jpg" />
+    <Content Include="Assets\img\gallery\full\full-21.jpg" />
+    <Content Include="Assets\img\gallery\full\full-22.jpg" />
+    <Content Include="Assets\img\gallery\full\full-23.jpg" />
+    <Content Include="Assets\img\gallery\full\full-24.jpg" />
+    <Content Include="Assets\img\gallery\full\full-25.jpg" />
+    <Content Include="Assets\img\gallery\full\full-26.jpg" />
+    <Content Include="Assets\img\gallery\full\full-27.jpg" />
+    <Content Include="Assets\img\gallery\full\full-28.jpg" />
+    <Content Include="Assets\img\gallery\full\full-29.jpg" />
+    <Content Include="Assets\img\gallery\full\full-3.jpg" />
+    <Content Include="Assets\img\gallery\full\full-30.jpg" />
+    <Content Include="Assets\img\gallery\full\full-31.jpg" />
+    <Content Include="Assets\img\gallery\full\full-32.jpg" />
+    <Content Include="Assets\img\gallery\full\full-33.jpg" />
+    <Content Include="Assets\img\gallery\full\full-4.jpg" />
+    <Content Include="Assets\img\gallery\full\full-5.jpg" />
+    <Content Include="Assets\img\gallery\full\full-6.jpg" />
+    <Content Include="Assets\img\gallery\full\full-7.jpg" />
+    <Content Include="Assets\img\gallery\full\full-8.jpg" />
+    <Content Include="Assets\img\gallery\full\full-9.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-1.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-10.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-11.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-12.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-13.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-14.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-15.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-16.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-17.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-18.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-19.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-2.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-20.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-21.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-22.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-23.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-24.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-25.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-26.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-27.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-28.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-29.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-3.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-30.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-31.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-32.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-4.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-5.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-6.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-7.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-8.jpg" />
+    <Content Include="Assets\img\gallery\thumbs\thumb-9.jpg" />
+    <Content Include="Assets\img\headers\dog.png" />
+    <Content Include="Assets\img\headers\header-bg.png" />
+    <Content Include="Assets\img\headers\header-lg-01.jpg" />
+    <Content Include="Assets\img\headers\header-lg-02.jpg" />
+    <Content Include="Assets\img\headers\header-lg-03.jpg" />
+    <Content Include="Assets\img\headers\header-lg-04.jpg" />
+    <Content Include="Assets\img\headers\header-lg-05.jpg" />
+    <Content Include="Assets\img\headers\header-lg-06.jpg" />
+    <Content Include="Assets\img\headers\header-md-01.jpg" />
+    <Content Include="Assets\img\headers\header-md-02.jpg" />
+    <Content Include="Assets\img\headers\header-md-03.jpg" />
+    <Content Include="Assets\img\headers\header-md-04.jpg" />
+    <Content Include="Assets\img\headers\header-md-05.jpg" />
+    <Content Include="Assets\img\headers\header-md-06.jpg" />
+    <Content Include="Assets\img\headers\header-md-07.jpg" />
+    <Content Include="Assets\img\headers\header-md-08.jpg" />
+    <Content Include="Assets\img\headers\header-md-09.jpg" />
+    <Content Include="Assets\img\headers\header-md-10.jpg" />
+    <Content Include="Assets\img\headers\header-md-11.jpg" />
+    <Content Include="Assets\img\headers\header-sm-01.jpg" />
+    <Content Include="Assets\img\headers\header-sm-02.jpg" />
+    <Content Include="Assets\img\headers\header-sm-03.jpg" />
+    <Content Include="Assets\img\headers\header-sm-04.jpg" />
+    <Content Include="Assets\img\headers\header-sm-05.jpg" />
+    <Content Include="Assets\img\headers\header-sm-06.jpg" />
+    <Content Include="Assets\img\headers\header-sm-07.jpg" />
+    <Content Include="Assets\img\headers\header-sm-08.jpg" />
+    <Content Include="Assets\img\headers\header-sm-vertical-01.jpg" />
+    <Content Include="Assets\img\headers\header-sm-vertical-02.jpg" />
+    <Content Include="Assets\img\headers\header-sm-vertical-03.jpg" />
+    <Content Include="Assets\img\headers\header-square-01.jpg" />
+    <Content Include="Assets\img\headers\header-square-02.jpg" />
+    <Content Include="Assets\img\headers\header-square-03.jpg" />
+    <Content Include="Assets\img\headers\header-square-04.jpg" />
+    <Content Include="Assets\img\headers\header-square-05.jpg" />
+    <Content Include="Assets\img\headers\header-square-06.jpg" />
+    <Content Include="Assets\img\headers\header-square-07.jpg" />
+    <Content Include="Assets\img\headers\header-square-08.jpg" />
+    <Content Include="Assets\img\headers\header-square-09.jpg" />
+    <Content Include="Assets\img\headers\header-square-10.jpg" />
+    <Content Include="Assets\img\headers\header-square-11.jpg" />
+    <Content Include="Assets\img\headers\header-square-12.jpg" />
+    <Content Include="Assets\img\icons\cc\american-express.png" />
+    <Content Include="Assets\img\icons\cc\discover.png" />
+    <Content Include="Assets\img\icons\cc\mastercard.png" />
+    <Content Include="Assets\img\icons\cc\visa.png" />
+    <Content Include="Assets\img\icons\flags\AD.png" />
+    <Content Include="Assets\img\icons\flags\AE.png" />
+    <Content Include="Assets\img\icons\flags\AF.png" />
+    <Content Include="Assets\img\icons\flags\AG.png" />
+    <Content Include="Assets\img\icons\flags\AI.png" />
+    <Content Include="Assets\img\icons\flags\AL.png" />
+    <Content Include="Assets\img\icons\flags\AM.png" />
+    <Content Include="Assets\img\icons\flags\AN.png" />
+    <Content Include="Assets\img\icons\flags\AO.png" />
+    <Content Include="Assets\img\icons\flags\AQ.png" />
+    <Content Include="Assets\img\icons\flags\AR.png" />
+    <Content Include="Assets\img\icons\flags\AS.png" />
+    <Content Include="Assets\img\icons\flags\AT.png" />
+    <Content Include="Assets\img\icons\flags\AU.png" />
+    <Content Include="Assets\img\icons\flags\AW.png" />
+    <Content Include="Assets\img\icons\flags\AX.png" />
+    <Content Include="Assets\img\icons\flags\AZ.png" />
+    <Content Include="Assets\img\icons\flags\BA.png" />
+    <Content Include="Assets\img\icons\flags\BB.png" />
+    <Content Include="Assets\img\icons\flags\BD.png" />
+    <Content Include="Assets\img\icons\flags\BE.png" />
+    <Content Include="Assets\img\icons\flags\BF.png" />
+    <Content Include="Assets\img\icons\flags\BG.png" />
+    <Content Include="Assets\img\icons\flags\BH.png" />
+    <Content Include="Assets\img\icons\flags\BI.png" />
+    <Content Include="Assets\img\icons\flags\BJ.png" />
+    <Content Include="Assets\img\icons\flags\BL.png" />
+    <Content Include="Assets\img\icons\flags\BM.png" />
+    <Content Include="Assets\img\icons\flags\BN.png" />
+    <Content Include="Assets\img\icons\flags\BO.png" />
+    <Content Include="Assets\img\icons\flags\BR.png" />
+    <Content Include="Assets\img\icons\flags\BS.png" />
+    <Content Include="Assets\img\icons\flags\BT.png" />
+    <Content Include="Assets\img\icons\flags\BW.png" />
+    <Content Include="Assets\img\icons\flags\BY.png" />
+    <Content Include="Assets\img\icons\flags\BZ.png" />
+    <Content Include="Assets\img\icons\flags\CA.png" />
+    <Content Include="Assets\img\icons\flags\CC.png" />
+    <Content Include="Assets\img\icons\flags\CD.png" />
+    <Content Include="Assets\img\icons\flags\CF.png" />
+    <Content Include="Assets\img\icons\flags\CG.png" />
+    <Content Include="Assets\img\icons\flags\CH.png" />
+    <Content Include="Assets\img\icons\flags\CI.png" />
+    <Content Include="Assets\img\icons\flags\CK.png" />
+    <Content Include="Assets\img\icons\flags\CL.png" />
+    <Content Include="Assets\img\icons\flags\CM.png" />
+    <Content Include="Assets\img\icons\flags\CN.png" />
+    <Content Include="Assets\img\icons\flags\CO.png" />
+    <Content Include="Assets\img\icons\flags\CR.png" />
+    <Content Include="Assets\img\icons\flags\CU.png" />
+    <Content Include="Assets\img\icons\flags\CV.png" />
+    <Content Include="Assets\img\icons\flags\CW.png" />
+    <Content Include="Assets\img\icons\flags\CX.png" />
+    <Content Include="Assets\img\icons\flags\CY.png" />
+    <Content Include="Assets\img\icons\flags\CZ.png" />
+    <Content Include="Assets\img\icons\flags\DE.png" />
+    <Content Include="Assets\img\icons\flags\DJ.png" />
+    <Content Include="Assets\img\icons\flags\DK.png" />
+    <Content Include="Assets\img\icons\flags\DM.png" />
+    <Content Include="Assets\img\icons\flags\DO.png" />
+    <Content Include="Assets\img\icons\flags\DZ.png" />
+    <Content Include="Assets\img\icons\flags\EC.png" />
+    <Content Include="Assets\img\icons\flags\EE.png" />
+    <Content Include="Assets\img\icons\flags\EG.png" />
+    <Content Include="Assets\img\icons\flags\EH.png" />
+    <Content Include="Assets\img\icons\flags\ER.png" />
+    <Content Include="Assets\img\icons\flags\ES.png" />
+    <Content Include="Assets\img\icons\flags\ET.png" />
+    <Content Include="Assets\img\icons\flags\EU.png" />
+    <Content Include="Assets\img\icons\flags\FI.png" />
+    <Content Include="Assets\img\icons\flags\FJ.png" />
+    <Content Include="Assets\img\icons\flags\FK.png" />
+    <Content Include="Assets\img\icons\flags\FM.png" />
+    <Content Include="Assets\img\icons\flags\FO.png" />
+    <Content Include="Assets\img\icons\flags\FR.png" />
+    <Content Include="Assets\img\icons\flags\GA.png" />
+    <Content Include="Assets\img\icons\flags\GB.png" />
+    <Content Include="Assets\img\icons\flags\GD.png" />
+    <Content Include="Assets\img\icons\flags\GE.png" />
+    <Content Include="Assets\img\icons\flags\GG.png" />
+    <Content Include="Assets\img\icons\flags\GH.png" />
+    <Content Include="Assets\img\icons\flags\GI.png" />
+    <Content Include="Assets\img\icons\flags\GL.png" />
+    <Content Include="Assets\img\icons\flags\GM.png" />
+    <Content Include="Assets\img\icons\flags\GN.png" />
+    <Content Include="Assets\img\icons\flags\GQ.png" />
+    <Content Include="Assets\img\icons\flags\GR.png" />
+    <Content Include="Assets\img\icons\flags\GS.png" />
+    <Content Include="Assets\img\icons\flags\GT.png" />
+    <Content Include="Assets\img\icons\flags\GU.png" />
+    <Content Include="Assets\img\icons\flags\GW.png" />
+    <Content Include="Assets\img\icons\flags\GY.png" />
+    <Content Include="Assets\img\icons\flags\HK.png" />
+    <Content Include="Assets\img\icons\flags\HN.png" />
+    <Content Include="Assets\img\icons\flags\HR.png" />
+    <Content Include="Assets\img\icons\flags\HT.png" />
+    <Content Include="Assets\img\icons\flags\HU.png" />
+    <Content Include="Assets\img\icons\flags\IC.png" />
+    <Content Include="Assets\img\icons\flags\ID.png" />
+    <Content Include="Assets\img\icons\flags\IE.png" />
+    <Content Include="Assets\img\icons\flags\IL.png" />
+    <Content Include="Assets\img\icons\flags\IM.png" />
+    <Content Include="Assets\img\icons\flags\IN.png" />
+    <Content Include="Assets\img\icons\flags\IQ.png" />
+    <Content Include="Assets\img\icons\flags\IR.png" />
+    <Content Include="Assets\img\icons\flags\IS.png" />
+    <Content Include="Assets\img\icons\flags\IT.png" />
+    <Content Include="Assets\img\icons\flags\JE.png" />
+    <Content Include="Assets\img\icons\flags\JM.png" />
+    <Content Include="Assets\img\icons\flags\JO.png" />
+    <Content Include="Assets\img\icons\flags\JP.png" />
+    <Content Include="Assets\img\icons\flags\KE.png" />
+    <Content Include="Assets\img\icons\flags\KG.png" />
+    <Content Include="Assets\img\icons\flags\KH.png" />
+    <Content Include="Assets\img\icons\flags\KI.png" />
+    <Content Include="Assets\img\icons\flags\KM.png" />
+    <Content Include="Assets\img\icons\flags\KN.png" />
+    <Content Include="Assets\img\icons\flags\KP.png" />
+    <Content Include="Assets\img\icons\flags\KR.png" />
+    <Content Include="Assets\img\icons\flags\KW.png" />
+    <Content Include="Assets\img\icons\flags\KY.png" />
+    <Content Include="Assets\img\icons\flags\KZ.png" />
+    <Content Include="Assets\img\icons\flags\LA.png" />
+    <Content Include="Assets\img\icons\flags\LB.png" />
+    <Content Include="Assets\img\icons\flags\LC.png" />
+    <Content Include="Assets\img\icons\flags\LI.png" />
+    <Content Include="Assets\img\icons\flags\LK.png" />
+    <Content Include="Assets\img\icons\flags\LR.png" />
+    <Content Include="Assets\img\icons\flags\LS.png" />
+    <Content Include="Assets\img\icons\flags\LT.png" />
+    <Content Include="Assets\img\icons\flags\LU.png" />
+    <Content Include="Assets\img\icons\flags\LV.png" />
+    <Content Include="Assets\img\icons\flags\LY.png" />
+    <Content Include="Assets\img\icons\flags\MA.png" />
+    <Content Include="Assets\img\icons\flags\MC.png" />
+    <Content Include="Assets\img\icons\flags\MD.png" />
+    <Content Include="Assets\img\icons\flags\ME.png" />
+    <Content Include="Assets\img\icons\flags\MF.png" />
+    <Content Include="Assets\img\icons\flags\MG.png" />
+    <Content Include="Assets\img\icons\flags\MH.png" />
+    <Content Include="Assets\img\icons\flags\MK.png" />
+    <Content Include="Assets\img\icons\flags\ML.png" />
+    <Content Include="Assets\img\icons\flags\MM.png" />
+    <Content Include="Assets\img\icons\flags\MN.png" />
+    <Content Include="Assets\img\icons\flags\MO.png" />
+    <Content Include="Assets\img\icons\flags\MP.png" />
+    <Content Include="Assets\img\icons\flags\MQ.png" />
+    <Content Include="Assets\img\icons\flags\MR.png" />
+    <Content Include="Assets\img\icons\flags\MS.png" />
+    <Content Include="Assets\img\icons\flags\MT.png" />
+    <Content Include="Assets\img\icons\flags\MU.png" />
+    <Content Include="Assets\img\icons\flags\MV.png" />
+    <Content Include="Assets\img\icons\flags\MW.png" />
+    <Content Include="Assets\img\icons\flags\MX.png" />
+    <Content Include="Assets\img\icons\flags\MY.png" />
+    <Content Include="Assets\img\icons\flags\MZ.png" />
+    <Content Include="Assets\img\icons\flags\NA.png" />
+    <Content Include="Assets\img\icons\flags\NC.png" />
+    <Content Include="Assets\img\icons\flags\NE.png" />
+    <Content Include="Assets\img\icons\flags\NF.png" />
+    <Content Include="Assets\img\icons\flags\NG.png" />
+    <Content Include="Assets\img\icons\flags\NI.png" />
+    <Content Include="Assets\img\icons\flags\NL.png" />
+    <Content Include="Assets\img\icons\flags\NO.png" />
+    <Content Include="Assets\img\icons\flags\NP.png" />
+    <Content Include="Assets\img\icons\flags\NR.png" />
+    <Content Include="Assets\img\icons\flags\NU.png" />
+    <Content Include="Assets\img\icons\flags\NZ.png" />
+    <Content Include="Assets\img\icons\flags\OM.png" />
+    <Content Include="Assets\img\icons\flags\PA.png" />
+    <Content Include="Assets\img\icons\flags\PE.png" />
+    <Content Include="Assets\img\icons\flags\PF.png" />
+    <Content Include="Assets\img\icons\flags\PG.png" />
+    <Content Include="Assets\img\icons\flags\PH.png" />
+    <Content Include="Assets\img\icons\flags\PK.png" />
+    <Content Include="Assets\img\icons\flags\PL.png" />
+    <Content Include="Assets\img\icons\flags\PN.png" />
+    <Content Include="Assets\img\icons\flags\PR.png" />
+    <Content Include="Assets\img\icons\flags\PS.png" />
+    <Content Include="Assets\img\icons\flags\PT.png" />
+    <Content Include="Assets\img\icons\flags\PW.png" />
+    <Content Include="Assets\img\icons\flags\PY.png" />
+    <Content Include="Assets\img\icons\flags\QA.png" />
+    <Content Include="Assets\img\icons\flags\RO.png" />
+    <Content Include="Assets\img\icons\flags\RS.png" />
+    <Content Include="Assets\img\icons\flags\RU.png" />
+    <Content Include="Assets\img\icons\flags\RW.png" />
+    <Content Include="Assets\img\icons\flags\SA.png" />
+    <Content Include="Assets\img\icons\flags\SB.png" />
+    <Content Include="Assets\img\icons\flags\SC.png" />
+    <Content Include="Assets\img\icons\flags\SD.png" />
+    <Content Include="Assets\img\icons\flags\SE.png" />
+    <Content Include="Assets\img\icons\flags\SG.png" />
+    <Content Include="Assets\img\icons\flags\SH.png" />
+    <Content Include="Assets\img\icons\flags\SI.png" />
+    <Content Include="Assets\img\icons\flags\SK.png" />
+    <Content Include="Assets\img\icons\flags\SL.png" />
+    <Content Include="Assets\img\icons\flags\SM.png" />
+    <Content Include="Assets\img\icons\flags\SN.png" />
+    <Content Include="Assets\img\icons\flags\SO.png" />
+    <Content Include="Assets\img\icons\flags\SR.png" />
+    <Content Include="Assets\img\icons\flags\SS.png" />
+    <Content Include="Assets\img\icons\flags\ST.png" />
+    <Content Include="Assets\img\icons\flags\SV.png" />
+    <Content Include="Assets\img\icons\flags\SY.png" />
+    <Content Include="Assets\img\icons\flags\SZ.png" />
+    <Content Include="Assets\img\icons\flags\TC.png" />
+    <Content Include="Assets\img\icons\flags\TD.png" />
+    <Content Include="Assets\img\icons\flags\TF.png" />
+    <Content Include="Assets\img\icons\flags\TG.png" />
+    <Content Include="Assets\img\icons\flags\TH.png" />
+    <Content Include="Assets\img\icons\flags\TJ.png" />
+    <Content Include="Assets\img\icons\flags\TK.png" />
+    <Content Include="Assets\img\icons\flags\TL.png" />
+    <Content Include="Assets\img\icons\flags\TM.png" />
+    <Content Include="Assets\img\icons\flags\TN.png" />
+    <Content Include="Assets\img\icons\flags\TO.png" />
+    <Content Include="Assets\img\icons\flags\TR.png" />
+    <Content Include="Assets\img\icons\flags\TT.png" />
+    <Content Include="Assets\img\icons\flags\TV.png" />
+    <Content Include="Assets\img\icons\flags\TW.png" />
+    <Content Include="Assets\img\icons\flags\TZ.png" />
+    <Content Include="Assets\img\icons\flags\UA.png" />
+    <Content Include="Assets\img\icons\flags\UG.png" />
+    <Content Include="Assets\img\icons\flags\US.png" />
+    <Content Include="Assets\img\icons\flags\UY.png" />
+    <Content Include="Assets\img\icons\flags\UZ.png" />
+    <Content Include="Assets\img\icons\flags\VA.png" />
+    <Content Include="Assets\img\icons\flags\VC.png" />
+    <Content Include="Assets\img\icons\flags\VE.png" />
+    <Content Include="Assets\img\icons\flags\VG.png" />
+    <Content Include="Assets\img\icons\flags\VI.png" />
+    <Content Include="Assets\img\icons\flags\VN.png" />
+    <Content Include="Assets\img\icons\flags\VU.png" />
+    <Content Include="Assets\img\icons\flags\WF.png" />
+    <Content Include="Assets\img\icons\flags\WS.png" />
+    <Content Include="Assets\img\icons\flags\YE.png" />
+    <Content Include="Assets\img\icons\flags\YT.png" />
+    <Content Include="Assets\img\icons\flags\ZA.png" />
+    <Content Include="Assets\img\icons\flags\ZM.png" />
+    <Content Include="Assets\img\icons\flags\ZW.png" />
+    <Content Include="Assets\img\icons\logos\dribbble.jpg" />
+    <Content Include="Assets\img\icons\logos\Slack_RGB.svg" />
+    <Content Include="Assets\img\icons\logos\spotify.jpg" />
+    <Content Include="Assets\img\icons\logos\starbucks.svg" />
+    <Content Include="Assets\img\icons\misc\coffee-icon.png" />
+    <Content Include="Assets\img\icons\misc\plane.jpg" />
+    <Content Include="Assets\img\loading.gif" />
+    <Content Include="Assets\img\locations\EOZpjI3oSqKPNnF2S4Tp_Untitled.jpg" />
+    <Content Include="Assets\img\locations\photo-1421986598195-0d9c26ecfcde.jpeg" />
+    <Content Include="Assets\img\locations\photo-1429681601148-75510b2cef43.jpeg" />
+    <Content Include="Assets\img\locations\photo-1432107294469-414527cb5c65.jpeg" />
+    <Content Include="Assets\img\locations\photo-1442975631115-c4f7b05b8a2c.jpeg" />
+    <Content Include="Assets\img\locations\photo-1446226760091-cc85becf39b4.jpeg" />
+    <Content Include="Assets\img\locations\photo-1449198063792-7d754d6f3c80.jpeg" />
+    <Content Include="Assets\img\locations\photo-1461072905169-7ca88b4d7b77.jpeg" />
+    <Content Include="Assets\img\locations\photo-1461963040894-7ee721035376.jpeg" />
+    <Content Include="Assets\img\locations\photo-1476386633426-499f460f6732.jpeg" />
+    <Content Include="Assets\img\locations\photo-1480348709911-be15f2c579ff.jpeg" />
+    <Content Include="Assets\img\locations\photo-1483204358806-afc5571f655b.jpeg" />
+    <Content Include="Assets\img\locations\photo-1483274816418-3975509c8f78.jpeg" />
+    <Content Include="Assets\img\locations\photo-1483648969698-5e7dcaa3444f.jpeg" />
+    <Content Include="Assets\img\locations\photo-1484805410139-353f84adfc96.jpeg" />
+    <Content Include="Assets\img\locations\photo-1484863083876-c0bf99ddaa61.jpeg" />
+    <Content Include="Assets\img\locations\shop_1.jpg" />
+    <Content Include="Assets\img\locations\shop_10.jpg" />
+    <Content Include="Assets\img\locations\shop_2.jpg" />
+    <Content Include="Assets\img\locations\shop_3.jpg" />
+    <Content Include="Assets\img\locations\shop_4.jpg" />
+    <Content Include="Assets\img\locations\shop_5.jpg" />
+    <Content Include="Assets\img\locations\shop_6.jpg" />
+    <Content Include="Assets\img\locations\shop_7.jpg" />
+    <Content Include="Assets\img\locations\shop_8.jpg" />
+    <Content Include="Assets\img\locations\shop_9.jpg" />
+    <Content Include="Assets\img\locations\unsplash-bonus.jpg" />
+    <Content Include="Assets\img\logo\logo-icon%402x.png" />
+    <Content Include="Assets\img\logo\logo-icon-white%402x.png" />
+    <Content Include="Assets\img\logo\logo-icon-white.png" />
+    <Content Include="Assets\img\logo\logo-icon.png" />
+    <Content Include="Assets\img\logo\logo-icon_v2%402x.png" />
+    <Content Include="Assets\img\mejs-controls.png" />
+    <Content Include="Assets\img\photoSwipe\default-skin\default-skin.png" />
+    <Content Include="Assets\img\photoSwipe\default-skin\default-skin.svg" />
+    <Content Include="Assets\img\photoSwipe\default-skin\preloader.gif" />
+    <Content Include="Assets\img\profiles\01.jpg" />
+    <Content Include="Assets\img\profiles\02.jpg" />
+    <Content Include="Assets\img\profiles\03.jpg" />
+    <Content Include="Assets\img\profiles\04.jpg" />
+    <Content Include="Assets\img\profiles\05.jpg" />
+    <Content Include="Assets\img\profiles\06.jpg" />
+    <Content Include="Assets\img\profiles\07.jpg" />
+    <Content Include="Assets\img\profiles\08.jpg" />
+    <Content Include="Assets\img\profiles\09.jpg" />
+    <Content Include="Assets\img\profiles\10.jpg" />
+    <Content Include="Assets\img\profiles\11.jpg" />
+    <Content Include="Assets\img\profiles\12.jpg" />
+    <Content Include="Assets\img\profiles\13.jpg" />
+    <Content Include="Assets\img\profiles\14.jpg" />
+    <Content Include="Assets\img\profiles\15.jpg" />
+    <Content Include="Assets\img\profiles\16.jpg" />
+    <Content Include="Assets\img\profiles\17.jpg" />
+    <Content Include="Assets\img\profiles\18.jpg" />
+    <Content Include="Assets\img\profiles\blank.png" />
+    <Content Include="Assets\img\profiles\large_01.jpg" />
+    <Content Include="Assets\img\profiles\large_02.jpg" />
+    <Content Include="Assets\img\profiles\large_03.jpg" />
+    <Content Include="Assets\img\profiles\large_04.jpg" />
+    <Content Include="Assets\img\profiles\large_05.jpg" />
+    <Content Include="Assets\img\profiles\large_06.jpg" />
+    <Content Include="Assets\img\profiles\large_07.jpg" />
+    <Content Include="Assets\img\profiles\mascot.jpg" />
+    <Content Include="Assets\img\profiles\mj.jpg" />
+    <Content Include="Assets\img\profiles\rn.jpg" />
+    <Content Include="Assets\img\timeline\14985868676_4b802b932a_m-1.jpg" />
+    <Content Include="Assets\img\timeline\14985868676_4b802b932a_m.jpg" />
+    <Content Include="Assets\img\timeline\14985868676_b51baa4071_h.jpg" />
+    <Content Include="Assets\img\timeline\14985871946_24f47d4b53_h.jpg" />
+    <Content Include="Assets\img\timeline\14985871946_86abb8c56f_m.jpg" />
+    <Content Include="Assets\img\timeline\15008465772_383e697089_m.jpg" />
+    <Content Include="Assets\img\timeline\15008465772_d50c8f0531_h.jpg" />
+    <Content Include="Assets\img\timeline\15008518202_b016d7d289_m-1.jpg" />
+    <Content Include="Assets\img\timeline\15008518202_b016d7d289_m.jpg" />
+    <Content Include="Assets\img\timeline\15008518202_c265dfa55f_h.jpg" />
+    <Content Include="Assets\img\timeline\15008867125_68a8ed88cc_m.jpg" />
+    <Content Include="Assets\img\timeline\15008867125_b61960af01_h.jpg" />
+    <Content Include="Assets\img\timeline\timeline-1.jpg" />
+    <Content Include="Assets\img\timeline\timeline-2.jpg" />
+    <Content Include="Assets\img\timeline\timeline-3.jpg" />
+    <Content Include="Assets\img\timeline\timeline-4.jpg" />
+    <Content Include="Assets\js\app.bundle.js" />
+    <Content Include="Assets\js\jquery.validate.min.js" />
+    <Content Include="Assets\js\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Assets\js\myJS.js" />
+    <Content Include="Assets\js\vendor.bundle.js" />
+    <Content Include="Assets\js\vendor.js" />
+    <Content Include="Assets\media\big_buck_bunny.jpg" />
+    <Content Include="Assets\media\big_buck_bunny.mp4" />
+    <Content Include="Assets\media\flashmediaelement.swf" />
+    <Content Include="Assets\media\fullscreen%402x.png" />
+    <Content Include="Assets\media\fullscreen.png" />
+    <Content Include="Assets\media\mejs-controls.png" />
+    <Content Include="Assets\media\mejs-controls.svg" />
+    <Content Include="Assets\media\pause%402x.png" />
+    <Content Include="Assets\media\pause.png" />
+    <Content Include="Assets\media\play%402x.png" />
+    <Content Include="Assets\media\play.png" />
+    <Content Include="Assets\media\speaker%402x.png" />
+    <Content Include="Assets\media\speaker-2%402x.png" />
+    <Content Include="Assets\media\speaker-2.png" />
+    <Content Include="Assets\media\speaker.png" />
+    <Content Include="Assets\partials\task\_task-add.html" />
+    <Content Include="Assets\partials\task\_task-edit.html" />
+    <Content Include="Assets\partials\_preloader.html" />
+    <Content Include="Assets\plugins\tagging\css\jquery.tagit.css" />
+    <Content Include="Assets\plugins\tagging\css\tagit.ui-zendesk.css" />
+    <Content Include="Assets\plugins\tagging\js\tag-it.js" />
+    <Content Include="Assets\plugins\tagging\js\tag-it.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Assets\file\upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\.DS_Store" />
+    <Content Include="Assets\css\.DS_Store" />
+    <Content Include="Assets\css\js\.DS_Store" />
+    <Content Include="Assets\css\js\app.bundle.js.map" />
+    <Content Include="Assets\data\.DS_Store" />
+    <Content Include="Assets\data\autocomplete_countries.json" />
+    <Content Include="Assets\file\.DS_Store" />
+    <Content Include="Assets\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Assets\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Assets\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Assets\fonts\Material-Design-Icons.ttf" />
+    <Content Include="Assets\fonts\Material-Design-Icons.woff" />
+    <Content Include="Assets\fonts\Material-Design-Icons.woff2" />
+    <Content Include="Assets\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="Assets\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="Assets\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Assets\fonts\slick.ttf" />
+    <Content Include="Assets\fonts\slick.woff" />
+    <Content Include="Assets\fonts\summernote.ttf" />
+    <Content Include="Assets\fonts\summernote.woff" />
+    <Content Include="Assets\fonts\weathericons-regular-webfont.eot" />
+    <Content Include="Assets\fonts\weathericons-regular-webfont.ttf" />
+    <Content Include="Assets\fonts\weathericons-regular-webfont.woff" />
+    <Content Include="Assets\fonts\weathericons-regular-webfont.woff2" />
+    <Content Include="Assets\img\.DS_Store" />
+    <Content Include="Assets\img\backgrounds\.DS_Store" />
+    <Content Include="Assets\img\backgrounds\_DS_Store" />
+    <Content Include="Assets\img\ecom\.DS_Store" />
+    <Content Include="Assets\img\ecom\products\.DS_Store" />
+    <Content Include="Assets\img\ecom\_DS_Store" />
+    <Content Include="Assets\img\gallery\.DS_Store" />
+    <Content Include="Assets\img\gallery\full\_DS_Store" />
+    <Content Include="Assets\img\gallery\thumbs\_DS_Store" />
+    <Content Include="Assets\img\gallery\_DS_Store" />
+    <Content Include="Assets\img\headers\_DS_Store" />
+    <Content Include="Assets\img\headers\_DS_Store%281%29" />
+    <Content Include="Assets\img\icons\.DS_Store" />
+    <Content Include="Assets\img\icons\cc\_DS_Store" />
+    <Content Include="Assets\img\icons\flags\_DS_Store" />
+    <Content Include="Assets\img\icons\_DS_Store" />
+    <Content Include="Assets\img\logo\.DS_Store" />
+    <Content Include="Assets\img\photoSwipe\default-skin\_DS_Store" />
+    <Content Include="Assets\img\photoSwipe\_DS_Store" />
+    <Content Include="Assets\img\profiles\_DS_Store" />
+    <Content Include="Assets\img\profiles\_DS_Store%281%29" />
+    <Content Include="Assets\js\app.bundle.js.map" />
+    <Content Include="Assets\media\mediaelement.srt" />
+    <Content Include="Assets\partials\.DS_Store" />
+    <None Include="packages.config" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Shared\_Notifications.cshtml" />
+    <Content Include="Views\Groups\Index.cshtml" />
+    <Content Include="Views\Groups\Create.cshtml" />
+    <Content Include="Views\Groups\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Confirm.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Networks\Index.cshtml" />
+    <Content Include="Views\Networks\Create.cshtml" />
+    <Content Include="Views\Networks\Edit.cshtml" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201904080606067_cdb.resx">
+      <DependentUpon>201904080606067_cdb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904080643501_user_change_prop.resx">
+      <DependentUpon>201904080643501_user_change_prop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904080650040_user_table_change2.resx">
+      <DependentUpon>201904080650040_user_table_change2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904080651287_user_table_change3.resx">
+      <DependentUpon>201904080651287_user_table_change3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904110602489_usertable_someRequiredDelete.resx">
+      <DependentUpon>201904110602489_usertable_someRequiredDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904110625206_useradd_prop_Token.resx">
+      <DependentUpon>201904110625206_useradd_prop_Token.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904111811576_Sale_Tables.resx">
+      <DependentUpon>201904111811576_Sale_Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904120652537_somechange.resx">
+      <DependentUpon>201904120652537_somechange.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>55989</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55989/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
