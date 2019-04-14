@@ -1080,13 +1080,13 @@
 	  $('.country-icons ul li').each(function () {
 	    var countryOptions = $(this).text();
 	    if ($.trim(countryOptions) === 'English') {
-	      $(this).prepend('<img src="assets/img/icons/flags/US.png" class="max-w-20 m-r-10" alt="" />');
+	      //$(this).prepend('<img src="~/Assets/img/icons/flags/US.png" class="max-w-20 m-r-10" alt="" />');
 	    } else if ($.trim(countryOptions) === 'Español') {
-	      $(this).prepend('<img src="assets/img/icons/flags/ES.png" class="max-w-20 m-r-10" alt="" />');
+	      //$(this).prepend('<img src="~/Assets/img/icons/flags/ES.png" class="max-w-20 m-r-10" alt="" />');
 	    } else if ($.trim(countryOptions) === 'Français') {
-	      $(this).prepend('<img src="assets/img/icons/flags/FR.png" class="max-w-20 m-r-10" alt="" />');
+	      //$(this).prepend('<img src="~/Assets/img/icons/flags/FR.png" class="max-w-20 m-r-10" alt="" />');
 	    } else if ($.trim(countryOptions) === 'Italiano') {
-	      $(this).prepend('<img src="assets/img/icons/flags/IT.png" class="max-w-20 m-r-10" alt="" />');
+	      //$(this).prepend('<img src="~/Assets/img/icons/flags/IT.png" class="max-w-20 m-r-10" alt="" />');
 	    }
 	  });
 	  $(".select").dropdown({ "optionClass": "withripple" });
@@ -1615,7 +1615,7 @@
 	    var $card = $(this).closest(card.cardClass);
 	    $card.append("<div class=\"load\"></div>");
 	    var $loader = $card.find('.load');
-	    $loader.load('assets/partials/_preloader.html', function () {
+	    $loader.load('Assets/partials/_preloader.html', function () {
 	      setTimeout(function () {
 	        $loader.fadeOut('1500', function () {
 	          $loader.remove();
@@ -4466,7 +4466,7 @@
 	    var countryNames = [];
 	    var throttledRequest = _.debounce(function (query, process) {
 	        $.ajax({
-	            url: '/assets/data/autocomplete_countries.json',
+	            url: '/Assets/data/autocomplete_countries.json',
 	            cache: false,
 	            success: function success(data) {
 	                countryObjs = {};
@@ -4485,7 +4485,7 @@
 	        },
 	        highlighter: function highlighter(item) {
 	            var country = countryObjs[item];
-	            return '<div class="country"><img style="max-width:45px;margin:10px;" src="assets/img/icons/flags/' + country.countryCode + '.png"/><strong>' + country.countryName + '</strong></div>';
+	            return '<div class="country"><img style="max-width:45px;margin:10px;" src="~/Assets/img/icons/flags/' + country.countryCode + '.png"/><strong>' + country.countryName + '</strong></div>';
 	        },
 	        updater: function updater(selectedName) {
 	            $(".country").val(countryObjs[selectedName].id);
@@ -4771,7 +4771,7 @@
 	      };
 	
 	      var createMarker = function createMarker(map, latlng, title) {
-	        var image = new google.maps.MarkerImage("assets/img/icons/misc/coffee-icon.png", null, null, null, new google.maps.Size(64, 64));
+	        var image = new google.maps.MarkerImage("~/Assets/img/icons/misc/coffee-icon.png", null, null, null, new google.maps.Size(64, 64));
 	        var marker = new google.maps.Marker({ position: latlng, map: map, title: title, icon: image });
 	        google.maps.event.addListener(marker, "click", function () {
 	          infoWnd.setContent("<strong>" + title + "</title>");
@@ -4794,34 +4794,34 @@
 	
 	      stationList = [{
 	        "latlng": [47.604981, -122.334249],
-	        name: "\n        <span class=\"list-group-item-body\"><img src=\"assets/img/locations/shop_1.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">999 Third Avenue, Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
+	        name: "\n        <span class=\"list-group-item-body\"><img src=\"~/Assets/img/locations/shop_1.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">999 Third Avenue, Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
 	      }, {
 	        "latlng": [47.605666, -122.335108],
-	        name: "\n        <span class=\"list-group-item-body\"><img src=\"assets/img/locations/shop_2.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">1000 Second Avenue, Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
+	        name: "\n        <span class=\"list-group-item-body\"><img src=\"~/Assets/img/locations/shop_2.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">1000 Second Avenue, Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
 	      }, {
 	        "latlng": [47.603710, -122.335673],
-	        name: "\n        <span class=\"list-group-item-body\"><img src=\"assets/img/locations/shop_3.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">823 First Ave, Seattle, WA </span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
+	        name: "\n        <span class=\"list-group-item-body\"><img src=\"~/Assets/img/locations/shop_3.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">823 First Ave, Seattle, WA </span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
 	      }, {
 	        "latlng": [47.606006, -122.336716],
-	        name: "\n        <span class=\"list-group-item-body\"><img src=\"assets/img/locations/shop_4.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">1191 2nd Avenue, Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
+	        name: "\n        <span class=\"list-group-item-body\"><img src=\"~/Assets/img/locations/shop_4.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">1191 2nd Avenue, Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
 	      }, {
 	        "latlng": [47.607285, -122.334292],
-	        name: "\n        <span class=\"list-group-item-body\"><img src=\"assets/img/locations/shop_5.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">1125 4th Avenue, Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
+	        name: "\n        <span class=\"list-group-item-body\"><img src=\"~/Assets/img/locations/shop_5.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">1125 4th Avenue, Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
 	      }, {
 	        "latlng": [47.607058, -122.336067],
-	        name: "\n        <span class=\"list-group-item-body\"><img src=\"assets/img/locations/shop_6.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">1201 3rd Ave, Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
+	        name: "\n        <span class=\"list-group-item-body\"><img src=\"~/Assets/img/locations/shop_6.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">1201 3rd Ave, Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
 	      }, {
 	        "latlng": [47.607058, -122.336067],
-	        name: "\n        <span class=\"list-group-item-body\"><img src=\"assets/img/locations/shop_7.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">621 2nd Ave, Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
+	        name: "\n        <span class=\"list-group-item-body\"><img src=\"~/Assets/img/locations/shop_7.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">621 2nd Ave, Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
 	      }, {
 	        "latlng": [47.604505, -122.330604],
-	        name: "\n        <span class=\"list-group-item-body\"><img src=\"assets/img/locations/shop_8.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">701 5th Avenue, Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
+	        name: "\n        <span class=\"list-group-item-body\"><img src=\"~/Assets/img/locations/shop_8.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">701 5th Avenue, Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
 	      }, {
 	        "latlng": [47.605708, -122.330206],
-	        name: "\n        <span class=\"list-group-item-body\"><img src=\"assets/img/locations/shop_9.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">800 5th Ave Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
+	        name: "\n        <span class=\"list-group-item-body\"><img src=\"~/Assets/img/locations/shop_9.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">800 5th Ave Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
 	      }, {
 	        "latlng": [47.607636, -122.338118],
-	        name: "\n        <span class=\"list-group-item-body\"><img src=\"assets/img/locations/shop_10.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">1301 2nd Ave, Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
+	        name: "\n        <span class=\"list-group-item-body\"><img src=\"~/Assets/img/locations/shop_10.jpg\" alt=\"\" class=\"img-rounded max-w-75 m-r-10\"></span>\n        <div class=\"list-group-item-body\">\n        <span class=\"list-group-item-heading\">Big House Coffee</span>\n        <span class=\"list-group-item-text block\">1301 2nd Ave, Seattle, WA</span>\n        <span class=\"list-group-item-text block\">Open until 9:00 PM</span>\n        </div>\n        "
 	      }];
 	
 	      google.maps.event.addDomListener(window, "load", initialize);
@@ -4959,7 +4959,7 @@
 	    if ($('#addTaskForm').length > 0) {
 	      $this.attr('disabled', true);
 	    } else {
-	      $.get("assets/partials/task/_task-add.html", function (getMarkup) {
+	      $.get("Assets/partials/task/_task-add.html", function (getMarkup) {
 	        $this.parents('.card-lane-wrapper').find('.card-lane').append(getMarkup).find('.form-control').focus();
 	        $this.attr('disabled', true);
 	        cancelTask();
@@ -5072,7 +5072,7 @@
 	    var $this = $(this);
 	    var cardTitle = $this.parents('.card-task-item').find('.card-title'),
 	        getTitleText = cardTitle.text();
-	    $.get("assets/partials/task/_task-edit.html", function (getMarkup) {
+	    $.get("Assets/partials/task/_task-edit.html", function (getMarkup) {
 	      if (!$('#addTaskForm').length > 0) {
 	        $this.closest('ul').children('li').addClass('hide');
 	        $(getMarkup).insertAfter(cardTitle);
@@ -5291,7 +5291,7 @@
 	  if (!Dropzone || !Dropzone.length) {
 	    Dropzone.autoDiscover = false;
 	    $('#product_add_images_form').dropzone({
-	      url: "/assets/file/upload",
+	      url: "/Assets/file/upload",
 	      addRemoveLinks: true
 	    });
 	  }
