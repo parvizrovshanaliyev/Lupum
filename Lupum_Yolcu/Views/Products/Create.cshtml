@@ -67,6 +67,24 @@
                                     @Html.TextBoxFor(Model => Model.Colors, new { @class = "form-control", name = "Colors" })
                                     @Html.ValidationMessageFor(Model => Model.Colors, null, new { @class = "text-danger" })
                                 </div>
+                                <div class="form-group label-floating is-empty">
+                                    <label for="NetworkId">Networks</label>
+                                    <select class="form-control" name="NetworkId" id="NetworkId">
+                                        <option value="0">Choose Network</option>
+                                        @foreach (var network in ViewBag.Networks)
+                                        {
+                                            <option data-id="@network.Id" value="@network.Id">@network.Name</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group label-floating is-empty networks hidden">
+                                    <label style="padding-right:0;padding-left:0;" class="col-lg-2">Sale Price for Networks</label>
+                                    <div class="col-md-10">
+                                        <div class="row">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
                                 <button type="submit" class="btn btn-primary">Add</button>
                             </form>
                         </div>
@@ -81,10 +99,23 @@
 @section styles{
     <link href="~/Assets/plugins/tagging/css/jquery.tagit.css" rel="stylesheet" />
     <link href="~/Assets/plugins/tagging/css/tagit.ui-zendesk.css" rel="stylesheet" />
+    <style>
+        .networks .col-md-2 {
+            position: relative;
+        }
+
+            .networks .col-md-2 i {
+                position: absolute;
+                color: #ec407a;
+                cursor: pointer;
+                top: 1%;
+                right: 6%;
+            }
+    </style>
 }
 @section scripts{
-    <script src="~/Assets/js/jquery.validate.min.js"></script>
-    <script src="~/Assets/js/jquery.validate.unobtrusive.min.js"></script>
+    @*<script src="~/Assets/js/jquery.validate.min.js"></script>
+    <script src="~/Assets/js/jquery.validate.unobtrusive.min.js"></script>*@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="~/Assets/plugins/tagging/js/tag-it.min.js"></script>
 
@@ -92,6 +123,51 @@
         $(document).ready(function () {
 
             $('input[name="Colors"]').tagit();
+
+
+            $('select[name="NetworkId"]').change(function () {
+                var network = {
+                    id: $(this).val(),
+                    name: $(this).find('option:selected').text()
+                }
+                console.log(network);
+                $(this).find(`option[value='${network.id}']`).remove();
+                $(".networks").removeClass("hidden");
+
+                $(".networks .row").append(`<div class="col-md-2" data-id="${network.id}" data-name="${network.name}">
+                                                        <label for="ProductNetworkPrices-${network.id}">${network.name}</label>
+                                                        <input type="hidden"  value="${network.id}"/>
+                                                        <input type="text"    id="ProductNetworkPrices-${network.id}" class="form-control" />
+                                                        <i class="mdi mdi-delete"></i>
+                                                    </div>`);
+
+
+                GenerateIndex();
+            });
+
+            $(document).on("click", ".networks i", function () {
+
+                var parent = $(this).parent();
+
+
+                $('select[name="NetworkId"]').append(`<option value="${parent.data("id")}">${parent.data("name")}</option>`);
+               
+                parent.remove();
+
+                if ($(".networks .col-md-2").length == 0) {
+                    $(".networks").addClass("hidden");
+                }
+                GenerateIndex();
+            });
+
+            function GenerateIndex() {
+                $(".networks .col-md-2").each(function (index, item) {
+
+                    $(this).find('input[type="hidden"]').attr("name", `ProductNetworkPrices[${index}][NetworkId]`);
+                    $(this).find('input[type="text"]').attr("name", `ProductNetworkPrices[${index}][Price]`);
+
+                });
+            }
         });
     </script>
 }

@@ -26,12 +26,15 @@ namespace Lupum_Yolcu.Controllers
         public ActionResult Create()
         {
             ViewBag.Types = _context.Types.ToList();
+            ViewBag.Networks = _context.Networks.ToList();
             return View();
         }
 
         [HttpPost,ValidateAntiForgeryToken]
         public ActionResult Create(Product product,string Status)
         {
+            ViewBag.Types = _context.Types.ToList();
+            ViewBag.Networks = _context.Networks.ToList();
             product.Status = true;
             if (string.IsNullOrEmpty(Status))
             {
@@ -47,8 +50,7 @@ namespace Lupum_Yolcu.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Types = _context.Types.ToList();
-
+            
             return View(product);
         }
         #endregion
