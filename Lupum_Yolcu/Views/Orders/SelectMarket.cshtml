@@ -33,7 +33,7 @@
                                             <option></option>
                                             @foreach (var item in Model)
                                             {
-                                                <option value="@item.Id">@(item.Network?.Name) @item.Name</option>
+                                                <option value="@item.Id">@(item.Network?.Name): @item.Name</option>
                                             }
                                         </select>
                                     </div>
