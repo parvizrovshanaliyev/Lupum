@@ -101,6 +101,22 @@ namespace Lupum_Yolcu.Controllers
             return View(product);
         }
         #endregion
+
+        #region Delete
+        public ActionResult Delete(int id) {
+            Product product = _context.Products.Include("OrderItems").FirstOrDefault(p => p.Id == id);
+            if (product == null)
+            {
+                return HttpNotFound("product yok ya la");
+            }
+            if (product.OrderItems.Count() != 0) return HttpNotFound("This Product have Order Items .You do not delete");
+
+            _context.Products.Remove(product);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        #endregion
     }
 
 }

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Lupum_Yolcu.Models.Market>
+@{
+    ViewBag.Title = "Select Market";
+}
+<div id="content_wrapper" class="card-overlay">
+    <div id="header_wrapper" class="header-md ecom-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <header id="header">
+                        <h1>@ViewBag.Title</h1>
+                        <ol class="breadcrumb">
+                            <li><a href="@Url.Action("Index","Dashboard")">Dashboard</a></li>
+                            <li><a href="@Url.Action("Index","Orders")">Orders</a></li>
+                            <li class="active">@ViewBag.Title</li>
+                        </ol>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="content" class="container">
+        <div class="content-body">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="card">
+                        <form action="/" method="post">
+                            <div class="card-body">
+                                <div class="form-group is-empty">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+                                        <select name="Id" class="form-control select2">
+                                            <option></option>
+                                            @foreach (var item in Model)
+                                            {
+                                                <option value="@item.Id">@(item.Network?.Name) @item.Name</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer text-right">
+                                <button class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section styles{
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.select2').select2({
+                placeholder: "Choose Markets bitch",
+                allowClear:true
+            });
+
+        });
+    </script>
+}
+
+
+
+
+
+
