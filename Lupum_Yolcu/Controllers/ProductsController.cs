@@ -33,8 +33,7 @@ namespace Lupum_Yolcu.Controllers
         [HttpPost,ValidateAntiForgeryToken]
         public ActionResult Create(Product product,string Status)
         {
-            ViewBag.Types = _context.Types.ToList();
-            ViewBag.Networks = _context.Networks.ToList();
+           
             product.Status = true;
             if (string.IsNullOrEmpty(Status))
             {
@@ -50,9 +49,58 @@ namespace Lupum_Yolcu.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-            
+            ViewBag.Types = _context.Types.ToList();
+            ViewBag.Networks = _context.Networks.ToList();
+            return View(product);
+        }
+        #endregion
+
+
+        #region Edit
+        public ActionResult Edit(int id)
+        {
+            Product product = _context.Products.Include("ProductNetworkPrices").FirstOrDefault(p => p.Id == id);
+            if (product == null)
+            {
+                return HttpNotFound("product yok ya la");
+            }
+            ViewBag.Types = _context.Types.ToList();
+            ViewBag.Networks = _context.Networks.ToList();
+            return View(product);
+        }
+        [HttpPost,ValidateAntiForgeryToken]
+        public ActionResult Edit(Product product, string Status,ProductNetworkPrice[] Prices)
+        {
+          
+            product.Status = true;
+            if (string.IsNullOrEmpty(Status))
+            {
+                product.Status = false;
+            }
+            if (_context.Products.FirstOrDefault(p => p.Name == product.Name && p.Id!=product.Id) != null)
+            {
+                ModelState.AddModelError("Name", "Bu adla bazada mehsul var");
+            }
+            if (ModelState.IsValid)
+            {
+                _context.Entry(product).State = System.Data.Entity.EntityState.Modified;
+                _context.ProductNetworkPrices.RemoveRange(_context.ProductNetworkPrices.Where(pnp => pnp.ProductId == product.Id));
+                foreach (var item in Prices)
+                {
+                    item.ProductId = product.Id;
+                    _context.ProductNetworkPrices.Add(item);
+                }
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.Types = _context.Types.ToList();
+            ViewBag.Networks = _context.Networks.ToList();
+            product.ProductNetworkPrices = _context.ProductNetworkPrices.Where(pi => pi.ProductId == product.Id).ToList();
+
+
             return View(product);
         }
         #endregion
     }
+
 }
