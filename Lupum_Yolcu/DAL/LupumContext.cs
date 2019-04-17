@@ -27,6 +27,7 @@ namespace Lupum_Yolcu.DAL
         public DbSet<ProductNetworkPrice> ProductNetworkPrices { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Models.Type> Types { get; set; }
+        public DbSet<ProductColor> ProductColors { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -33,7 +33,7 @@ namespace Lupum_Yolcu.Controllers
         [HttpPost,ValidateAntiForgeryToken]
         public ActionResult Create(Product product,string Status)
         {
-            //return Content(product.Colors.ToString());
+            //return Content(product.Colors.Split(',').ToString());
             product.Status = true;
             if (string.IsNullOrEmpty(Status))
             {
@@ -45,6 +45,19 @@ namespace Lupum_Yolcu.Controllers
             }
             if (ModelState.IsValid)
             {
+
+                var colors = product.Colors.Split(',');
+                foreach (var item in colors)
+                {
+                    var pcolor = new ProductColor
+                    {
+                        ProductId = product.Id,
+                        Name = item
+                    };
+
+                    _context.ProductColors.Add(pcolor);
+
+                }
                 _context.Products.Add(product);
                 _context.SaveChanges();
                 return RedirectToAction("Index");
@@ -81,9 +94,8 @@ namespace Lupum_Yolcu.Controllers
             {
                 ModelState.AddModelError("Name", "Bu adla bazada mehsul var");
             }
-            if (ModelState.IsValid)
+            if (Prices != null)
             {
-                _context.Entry(product).State = System.Data.Entity.EntityState.Modified;
                 _context.ProductNetworkPrices.RemoveRange(_context.ProductNetworkPrices.Where(pnp => pnp.ProductId == product.Id));
                 foreach (var item in Prices)
                 {
@@ -91,8 +103,34 @@ namespace Lupum_Yolcu.Controllers
                     _context.ProductNetworkPrices.Add(item);
                 }
                 _context.SaveChanges();
-                return RedirectToAction("Index");
             }
+            else
+            {
+                if (ModelState.IsValid)
+                {
+                    _context.Entry(product).State = System.Data.Entity.EntityState.Modified;
+                    _context.ProductColors.RemoveRange(_context.ProductColors.Where(pnp => pnp.ProductId == product.Id));
+
+
+
+                    var colors = product.Colors.Split(',');
+                    foreach (var color in colors)
+                    {
+                        var pcolor = new ProductColor
+                        {
+                            ProductId = product.Id,
+                            Name = color
+                        };
+
+                        _context.ProductColors.Add(pcolor);
+
+                    }
+                    _context.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
+            ModelState.AddModelError("", "price bos gelir");
+            ViewBag.ErrorMessage = "Email not found or matched";
             ViewBag.Types = _context.Types.ToList();
             ViewBag.Networks = _context.Networks.ToList();
             product.ProductNetworkPrices = _context.ProductNetworkPrices.Where(pi => pi.ProductId == product.Id).ToList();
