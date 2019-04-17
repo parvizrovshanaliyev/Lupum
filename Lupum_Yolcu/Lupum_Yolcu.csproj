@@ -169,6 +169,10 @@
     <Compile Include="Migrations\201904120652537_somechange.Designer.cs">
       <DependentUpon>201904120652537_somechange.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201904171840590_productcolor.cs" />
+    <Compile Include="Migrations\201904171840590_productcolor.Designer.cs">
+      <DependentUpon>201904171840590_productcolor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Action.cs" />
     <Compile Include="Models\Group.cs" />
@@ -911,6 +915,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201904120652537_somechange.resx">
       <DependentUpon>201904120652537_somechange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201904171840590_productcolor.resx">
+      <DependentUpon>201904171840590_productcolor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

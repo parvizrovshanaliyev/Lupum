@@ -9,6 +9,7 @@ namespace Lupum_Yolcu.Models
         public Product()
         {
             ProductNetworkPrices = new HashSet<ProductNetworkPrice>();
+            ProductColors = new HashSet<ProductColor>();
             OrderItems = new HashSet<OrderItem>();
         }
         public int Id { get; set; }
@@ -31,8 +32,22 @@ namespace Lupum_Yolcu.Models
         public int TypeId { get; set; }
 
         public virtual ICollection<ProductNetworkPrice> ProductNetworkPrices { get; set; }
+        public virtual ICollection<ProductColor> ProductColors { get; set; }
         public virtual Type Type { get; set; }
         public virtual ICollection<OrderItem> OrderItems { get; set; }
+
+    }
+    public class ProductColor
+    {
+        public int Id { get; set; }
+
+        [StringLength(50), Required]
+        public string Name { get; set; }
+
+        [Required]
+        public int ProductId { get; set; }
+
+        public virtual Product Product { get; set; }
 
     }
 

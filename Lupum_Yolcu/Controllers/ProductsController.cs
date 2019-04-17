@@ -33,7 +33,7 @@ namespace Lupum_Yolcu.Controllers
         [HttpPost,ValidateAntiForgeryToken]
         public ActionResult Create(Product product,string Status)
         {
-           
+            //return Content(product.Colors.ToString());
             product.Status = true;
             if (string.IsNullOrEmpty(Status))
             {
