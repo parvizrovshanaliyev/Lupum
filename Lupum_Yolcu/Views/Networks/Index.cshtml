@@ -18,7 +18,7 @@
             </div>
         </div>
     </div>
-    <div id="content" class="container">
+    <div id="content" >
         <div class="content-body">
             <div class="row">
                 <div class="col-xs-12">
@@ -32,40 +32,58 @@
                         </header>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-striped table-hover customer-table">
+                                <table class="table table-hover table-striped table-bordered customer-table ">
 
-                                    <thead>
+                                    <thead >
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Market Count</th>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th>Actions</th>
+                                            <th class=" h4 text-center">Name</th>
+                                            <th class=" h4 text-center">Market Count</th>
+                                            <th class=" h4 text-center" colspan="2">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                        @foreach (var network in Model)
+                                    
+                                    <tbody >
+                                        @for (int i = 0; i < Model.Count(); i++)
                                         {
-                                            <tr>
-                                               
-                                                <td>@network.Markets.Count()</td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                    <a href="@Url.Action("Edit",new{id=network.Id})" class="icon "><i class="zmdi zmdi-edit"></i></a>
+                                        <tr>
+                                            <td>@Model.ElementAt(i).Name</td>
+                                            <td>
+                                                @if (Model.ElementAt(i).Markets.Count() != 0)
+                                                {
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
+                                                        <select name="id" class="form-control ">
+                                                            <option>Markets Count: @Model.ElementAt(i).Markets.Count()</option>
+                                                            @foreach (var markets in Model.ElementAt(i).Markets)
+                                                            {
+                                                                <option value="@markets.Id">@markets.Name</option>
+                                                                @*<option value="@network.Markets.Where(n=>n.NetworkId==network.Id).Select(nv=>nv.Id)">@network.Markets.Where(n => n.NetworkId == network.Id).Select(nv => nv.Name)</option>*@
+                                                            }
+                                                        </select>
+                                                    </div>
+                                                }
+                                                else
+                                                {
+                                                    <h3 class="text-center">@Model.ElementAt(i).Markets.Count</h3>
 
-                                                    @if (network.Markets.Count() == 0)
-                                                    {
-                                                        <a href="@Url.Action("delete",new{id=network.Id})" class="icon delete"><i class="zmdi zmdi-delete"></i></a>
+                                                }
+                                            </td>
+                                            
+                                            <td>
+                                                <a href="@Url.Action("Edit",new{id=Model.ElementAt(i).Id})" class="icon "><i class="zmdi zmdi-edit"></i></a>
+                                            </td>
+                                            <td>
+                                                @if (Model.ElementAt(i).Markets.Count() == 0)
+                                                {
+                                                    <a href="@Url.Action("delete",new{id=Model.ElementAt(i).Id})" class="icon delete"><i class="zmdi zmdi-delete"></i></a>
 
-                                                    }
-                                                </td>
-
-                                            </tr>
+                                                }
+                                                else
+                                                {
+                                                    <h4 style="font-size: 100%;" class="  label label-success">Bu Networke aid marketler var. Siline Bilmez</h4>
+                                                }
+                                            </td>
+                                        </tr>
                                         }
                                     </tbody>
                                 </table>

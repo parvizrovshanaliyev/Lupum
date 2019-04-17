@@ -1,6 +1,8 @@
-﻿@{
-    ViewBag.Title = "Orders";
+﻿@model  IEnumerable<Lupum_Yolcu.Models.Product>
+@{
+    ViewBag.Title = "Create Order";
 }
+
 <div id="content_wrapper" class="card-overlay">
     <div id="header_wrapper" class="header-md ecom-header">
         <div class="container-fluid">
@@ -20,14 +22,10 @@
     <div id="content">
         <div class="content-body">
             <div class="row">
-                <div class="col-xs-12">
+                <div class="col-md-9">
                     <div class="card">
                         <header class="card-heading ">
-                            <h2 class="card-title">@ViewBag.Title Table</h2>
-                            <a href="@Url.Action("SelectMarket")" class="btn btn-default">
-                                Create Order
-                            </a>
-
+                           
                         </header>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -38,24 +36,35 @@
                                             <th>Name</th>
                                             <th>Price</th>
                                             <th>Colors</th>
-                                            <th>Status</th>
-                                            <th></th>
+                                            
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                      
+                                        @foreach (var product in Model)
+                                        {
+                                            <tr>
+                                                <td>@product.Name</td>
+                                                <td>@product.Price.ToString("0.##")</td>
+                                                <td>@product.Colors</td>
+                                                <td>
+                                                    <a href="@Url.Action("Edit",new{id=product.Id})" class="icon "><i class="zmdi zmdi-edit"></i></a>
+                                                </td>
+                                            </tr>
+                                        }
                                     </tbody>
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+                <div class="col-lg-3"></div>
             </div>
         </div>
     </div>
 </div>
+
+
 
 
 

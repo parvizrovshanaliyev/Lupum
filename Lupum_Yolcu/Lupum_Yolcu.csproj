@@ -885,6 +885,7 @@
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Orders\Index.cshtml" />
     <Content Include="Views\Orders\SelectMarket.cshtml" />
+    <Content Include="Views\Orders\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201904080606067_cdb.resx">

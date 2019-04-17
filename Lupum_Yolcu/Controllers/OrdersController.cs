@@ -26,5 +26,13 @@ namespace Lupum_Yolcu.Controllers
             var markets = _context.Markets.Include("Network").Where(m => m.Status).ToList();
             return View(markets);
         }
+
+        public ActionResult Create(int id)
+        {
+            Market market = _context.Markets.Find(id);
+            if (market == null) return HttpNotFound("Bu magazaya sifaris verile bilmez");
+            var products = _context.Products.Include("Type").Include("ProductNetworkPrices").Where(p => p.Status).ToList();
+            return View(products);
+        }
     }
-}
+} 

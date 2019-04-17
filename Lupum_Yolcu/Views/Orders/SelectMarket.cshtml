@@ -24,12 +24,12 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="card">
-                        <form action="/" method="post">
+                        <form action="@Url.Action("Create")" method="post">
                             <div class="card-body">
                                 <div class="form-group is-empty">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
-                                        <select name="Id" class="form-control select2">
+                                        <select name="id" class="form-control select2">
                                             <option></option>
                                             @foreach (var item in Model)
                                             {
@@ -61,7 +61,7 @@
     <script>
         $(document).ready(function () {
             $('.select2').select2({
-                placeholder: "Choose Markets bitch",
+                placeholder: "choose the Markets for your order",
                 allowClear:true
             });
 
