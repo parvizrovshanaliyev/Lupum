@@ -56,7 +56,7 @@
                                     <tbody class="products">
                                         @foreach (var product in Model)
                                         {
-                                            <tr>
+                                            <tr  data-id="@product.Id" data-name="@product.Name" data-price="@product.Price.ToString("0.##")" data-gift="@product.GiftCount" >
                                                 <td>@product.Name</td>
                                                 <td>@product.Price.ToString("0.##")</td>
                                                 <td>@product.Colors</td>
@@ -83,12 +83,12 @@
 
 
 <!-- Modal Demos ===========================================================-->
-<div class="modal fade in" id="basic_modal" tabindex="-1" role="dialog" aria-labelledby="basic_modal">
+<div class="modal fade in" id="product-add" tabindex="-1" role="dialog" aria-labelledby="basic_modal">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
 
-                <h4 class="modal-title" ><span id="product-name">Product Name</span><br /><span>Qiymet:1.5 azn</span></h4>
+                <h4 class="modal-title" ><span id="product-name"></span><br /><span id="price"></span> AZN</h4>
 
                 <ul class="card-actions icons right-top">
                     <li>
@@ -176,7 +176,8 @@
     <script>
 
         $(document).ready(function () {
-
+    
+           /// products search
             $("#search-product").on("input", function () {
 
                 //console.log($(this).val());
@@ -192,6 +193,38 @@
                     //console.log($(this).find("td:first").text());
 
                 });
+
+            });
+           /// products search
+
+            ///orders product modal 
+            $(".products a").on("click",function (ev) {
+                ev.preventDefault();
+                var tr = $(this).parents("tr");
+                $("#product-add").find("#product-name").text(tr.data("name"));
+                $("#product-add").find("#price").text(tr.data("price"));
+                if (tr.data("gift") == 0) {
+                    $("a[href='#gift']").addClass("hidden");
+                    $("#gift").addClass("hidden");
+                }
+
+                $("input[name='gift']").data("count", tr.data("gift")); 
+                $("#product-add").modal("show");
+
+                $("#product-add").on('hidden.bs.modal', function (e) {
+
+                    //console.log("closed");
+
+                    $("a[href='#gift']").removeClass("hidden");
+                    $("#gift").removeClass("hidden");
+                    $(this).find(".nav .active").removeClass("active");
+                    $(this).find(".nav li:first").addClass("active");
+
+                    $(this).find(".tab-content .active").removeClass("active").removeClass("in");
+                    $(this).find(".tab-content div:first").addClass("active").addClass("in");
+
+                });
+
 
             });
 
