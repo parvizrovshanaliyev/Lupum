@@ -44,8 +44,7 @@ namespace Lupum_Yolcu.Controllers
                 ModelState.AddModelError("Name", "Bu adla bazada mehsul var");
             }
             if (ModelState.IsValid)
-            {
-
+            { 
                 if (product.Colors != null)
                 {
                     var colors = product.Colors.Split(',');
@@ -56,9 +55,7 @@ namespace Lupum_Yolcu.Controllers
                             ProductId = product.Id,
                             Name = item
                         };
-
                         _context.ProductColors.Add(pcolor);
-
                     }
                 }
                 _context.Products.Add(product);
@@ -109,6 +106,7 @@ namespace Lupum_Yolcu.Controllers
             if(product.Colors != null)
             {
                 _context.ProductColors.RemoveRange(_context.ProductColors.Where(pnp => pnp.ProductId == product.Id));
+                //var dbColors = _context.ProductColors.Where(pc => pc.ProductId == product.Id).SelectMany(c => c.Name);
                 var colors = product.Colors.Split(',');
                 foreach (var color in colors)
                 {
@@ -117,26 +115,12 @@ namespace Lupum_Yolcu.Controllers
                         ProductId = product.Id,
                         Name = color
                     };
-
                     _context.ProductColors.Add(pcolor);
-
                 }
             }
             _context.Entry(product).State = System.Data.Entity.EntityState.Modified;
             _context.SaveChanges();
             return RedirectToAction("Index");
-            //if (Prices != null)
-            //{
-               
-            //    if (ModelState.IsValid)
-            //    {
-                    
-            //    }
-            //}
-            //ModelState.AddModelError("", "price bos gelir");
-            //ViewBag.ErrorMessage = "Email not found or matched";
-           
-            //return View(product);
         }
         #endregion
 

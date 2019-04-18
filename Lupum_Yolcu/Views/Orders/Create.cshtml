@@ -9,6 +9,20 @@
     .modal .modal-header {
         background: #222f3c;
     }
+    .my-custom-scrollbar {
+        position: relative;
+        height: 521px;
+        overflow: auto;
+    }
+
+    .table-wrapper-scroll-y {
+        display: block;
+    }
+    .fixed_headers {
+       
+        table-layout: fixed;
+        border-collapse: collapse;
+    }
 </style>
     }
 <div id="content_wrapper" class="card-overlay">
@@ -30,38 +44,51 @@
     <div id="content">
         <div class="content-body">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <div class="card">
                         <header class="card-heading ">
-                            <div style="position:static;" class="card-search open">
-                                <div id="productsTable_wrapper" class="form-group label-floating is-empty">
-                                    <i class="zmdi zmdi-search search-icon-left"></i>
-                                    <input id="search-product" type="text" class="form-control filter-input" placeholder="Filter Products..." autocomplete="off">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <div style="position:static;" class="card-search open">
+                                        <div id="productsTable_wrapper" class="form-group label-floating is-empty">
+                                            <i class="zmdi zmdi-search search-icon-left"></i>
+                                            <input id="search-product" type="text" class="form-control filter-input" placeholder="Filter Products..." autocomplete="off">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </header>
                         <div class="card-body">
-                            <div class="table-responsive">
+                            <div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
                                 <table class="table table-striped table-hover customer-table">
 
-                                    <thead>
+                                    <thead class="fixed">
                                         <tr>
                                             <th>Name</th>
                                             <th>Price</th>
                                             <th>Colors</th>
 
-                                            <th>Actions</th>
+                                            <th  class="text-red">Actions</th>
                                         </tr>
                                     </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Price</th>
+                                            <th>Colors</th>
+
+                                            <th class="text-red">Actions</th>
+                                        </tr>
+                                    </tfoot>
                                     <tbody class="products">
                                         @foreach (var product in Model)
                                         {
-                                            <tr  data-id="@product.Id" data-name="@product.Name" data-price="@product.Price.ToString("0.##")" data-gift="@product.GiftCount" >
+                                            <tr  data-id="@product.Id" data-name="@product.Name" data-price="@product.Price.ToString("#.00")" data-gift="@product.GiftCount" >
                                                 <td>@product.Name</td>
-                                                <td>@product.Price.ToString("0.##")</td>
+                                                <td>@product.Price.ToString("#.00")</td>
                                                 <td>@product.Colors</td>
                                                 <td>
-                                                    <a href="@Url.Action("Edit",new{id=product.Id})" class="icon "><i class="zmdi zmdi-shopping-cart"></i></a>
+                                                    <a href="@Url.Action("Edit",new{id=product.Id})" class="icon text-red "><i class="zmdi zmdi-shopping-cart"></i></a>
                                                 </td>
                                             </tr>
                                         }
@@ -71,37 +98,48 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-5">
                     <div class="card">
                         <header class="card-heading ">
                             <h2 class="card-title">Basket</h2>
                         </header>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-striped table-hover customer-table">
+                        <div style="height:590px" class="card-body">
+                            <div style="height:461px" class="table-responsive ">
+                                <table class="table table-bordered  table-hover fixed_headers customer-table">
 
                                     <thead>
                                         <tr>
                                             <th>Name</th>
                                             <th>Price</th>
-                                            <th>Colors</th>
+                                            <th>Quantity</th>
 
-                                            <th>Actions</th>
+                                            <th  class="text-red">Sum</th>
                                         </tr>
                                     </thead>
-                                    <tbody class="products">
-                                        @*@foreach (var product in Model)
-                                        {
-                                            <tr data-id="@product.Id" data-name="@product.Name" data-price="@product.Price.ToString("0.##")" data-gift="@product.GiftCount">
-                                                <td>@product.Name</td>
-                                                <td>@product.Price.ToString("0.##")</td>
-                                                <td>@product.Colors</td>
-                                                <td>
-                                                    <a href="@Url.Action("Edit",new{id=product.Id})" class="icon "><i class="zmdi zmdi-shopping-cart"></i></a>
-                                                </td>
-                                            </tr>
-                                        }*@
+                                    
+                                    <tbody class="basket ">
+
+                                        
                                     </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Name</td>
+                                            <td>Price</td>
+                                            <td>Quantity</td>
+
+                                            <td  class="text-red">Sum</td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="4"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-red" colspan="3"><b>Total</b></td>
+                                            <td id="sum" class="text-red"></td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                         </div>
@@ -207,7 +245,10 @@
     <script>
 
         $(document).ready(function () {
-    
+
+            ///products table scroll
+
+
            /// products search
             $("#search-product").on("input", function () {
 
@@ -234,6 +275,7 @@
                 var tr = $(this).parents("tr");
                 $("#product-add").find("#product-name").text(tr.data("name"));
                 $("#product-add").find("#price").text(tr.data("price"));
+                $("#product-add").data("id", tr.data("id"));
                 if (tr.data("gift") == 0) {
                     $("a[href='#gift']").addClass("hidden");
                     $("#gift").addClass("hidden");
@@ -265,12 +307,61 @@
                 $(this).find(".tab-content .active").removeClass("active").removeClass("in");
                 $(this).find(".tab-content div:first").addClass("active").addClass("in");
 
+                $("input[name='count_normal']").val("");
+                $("input[name='count_discount']").val("");
+                $("input[name='count_gift']").val("");
+                $("input[name='gift']").val("");
+                $("input[name='discount']").val("");
+                
+
             });
             ///modal product add to basket
             $("#addBasket").on("click", function () {
 
-
+                if ($("#normal").hasClass("active")) {
+                    //console.log("normal");
+                    var count = $("input[name='count_normal']").val();
+                    var id = $("#product-add").data("id");
+                    AddTobasket(id, count);
+                }
+                if ($("#discount").hasClass("active")) {
+                    //console.log("dis");
+                    var count = $("input[name='count_discount']").val();
+                    var id = $("#product-add").data("id");
+                    var discount = $("input[name='discount']").val();
+                    AddTobasket(id, count, 0, discount);
+                }
+                if ($("#gift").hasClass("active")) {
+                    //console.log("gift");
+                    var count = $("input[name='count_gift']").val();
+                    var id = $("#product-add").data("id");
+                    var gift = $("input[name='gift']").val();
+                    AddTobasket(id, count, gift, 0);
+                }
+                $("#product-add").modal("hide");
             });
+
+            function AddTobasket(id,count, gift = 0, discount = 0) {
+
+                var tr = $(`.products tr[data-id='${id}']`);
+                var subTotal = Number(count) * Number(tr.data("price")) - Number(count) * Number(tr.data("price")) / 100 * Number(discount);
+                //console.log(tr.data());
+                var append =$(`<tr>
+                                <td>${tr.data("name")}</td>
+                                <td>${tr.data("price")}</td>
+                                <td>${count} </td>
+                                <td class="text-red">${subTotal}</td>
+                               </tr>`);
+                if (discount != 0) {
+                    append.find("td ").eq(1).append(`<br /><span class="text-danger">-${discount}%</span>`);
+                }
+                if (gift != 0) {
+                    append.find("td ").eq(2).append(`<br /> <span class="text-danger">+${gift}</span>`);
+                }
+                var total = Number($("#sum").text()) + subTotal;
+                $("#sum").text(total);
+                $(".basket").append(append);
+            }
         });
     </script>
 }
