@@ -182,6 +182,7 @@
     <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Models\Payment.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ProductColor.cs" />
     <Compile Include="Models\ProductNetworkPrice.cs" />
     <Compile Include="Models\Role.cs" />
     <Compile Include="Models\Type.cs" />
